@@ -17,23 +17,14 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Inter', sans-serif; background: #0a0a1a; color: white; overflow-x: hidden; position: relative; }
 
-    .bg-animation {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: var(--gradient); background-size: 400% 400%;
-      animation: gradient 20s ease infinite; z-index: -2;
-    }
+    .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--gradient); background-size: 400% 400%; animation: gradient 20s ease infinite; z-index: -2; }
     @keyframes gradient { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
 
     .particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
     .particle { position: absolute; background: rgba(255,255,255,0.15); border-radius: 50%; animation: float 18s infinite linear; }
     @keyframes float { 0% { transform: translateY(100vh) rotate(0deg); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; } }
 
-    nav {
-      position: fixed; top: 25px; left: 50%; transform: translateX(-50%);
-      background: var(--glass); backdrop-filter: blur(20px); border-radius: 60px;
-      padding: 18px 50px; z-index: 1000; border: 1px solid var(--glass-border);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.4); transition: all 0.4s;
-    }
+    nav { position: fixed; top: 25px; left: 50%; transform: translateX(-50%); background: var(--glass); backdrop-filter: blur(20px); border-radius: 60px; padding: 18px 50px; z-index: 1000; border: 1px solid var(--glass-border); box-shadow: 0 20px 50px rgba(0,0,0,0.4); transition: all 0.4s; }
     nav.scrolled { top: 15px; padding: 14px 40px; }
     .logo { font-size: 2.1rem; font-weight: 900; background: linear-gradient(135deg, #fff, #c4b5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     nav ul { display: flex; gap: 35px; }
@@ -53,20 +44,14 @@
     .animate-on-scroll.animated { opacity: 1; transform: translateY(0); }
 
     .about { display: flex; align-items: center; gap: 100px; max-width: 1400px; margin: 0 auto; flex-wrap: wrap; }
-    .about-img img {
-      width: 430px; height: 430px; object-fit: cover; border-radius: 50%;
-      border: 22px solid rgba(255,255,255,0.18); box-shadow: 0 40px 100px rgba(0,0,0,0.6);
-      animation: floatImage 7s ease-in-out infinite;
-    }
+    .about-img img { width: 430px; height: 430px; object-fit: cover; border-radius: 50%; border: 22px solid rgba(255,255,255,0.18); box-shadow: 0 40px 100px rgba(0,0,0,0.6); animation: floatImage 7s ease-in-out infinite; }
     @keyframes floatImage { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-35px)} }
 
     .skills-grid, .repos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 35px; max-width: 1400px; margin: 0 auto; }
-    .skill-card, .timeline-content, .repo-card, .contact-form form {
-      background: var(--glass); backdrop-filter: blur(20px); border: 1px solid var(--glass-border);
-      border-radius: 35px; padding: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-    }
+    .skill-card, .timeline-content, .repo-card, .contact-form form { background: var(--glass); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 35px; padding: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
     .skill-card:hover, .repo-card:hover { transform: translateY(-20px); box-shadow: 0 40px 80px rgba(99,102,241,0.5); }
-    .progress { height: 18px; background: linear-gradient(90deg, #6366f1, #ec4899); border-radius: 15px; width: 0; transition: width 2.5s ease; }
+    .progress-container { height: 18px; background: rgba(255,255,255,0.1); border-radius: 15px; overflow: hidden; margin-top: 20px; }
+    .progress { height: 100%; background: linear-gradient(90deg, #6366f1, #ec4899); width: 0; transition: width 2.5s ease; border-radius: 15px; }
 
     .timeline { max-width: 1200px; margin: 0 auto; position: relative; }
     .timeline::before { content: ''; position: absolute; width: 8px; background: linear-gradient(#6366f1,#ec4899); top: 0; bottom: 0; left: 50%; margin-left: -4px; border-radius: 10px; }
@@ -76,15 +61,8 @@
     .timeline-item.right { left: 50%; }
     .timeline-item.right::after { left: -16px; }
 
-    .contact-form input, .contact-form textarea {
-      width: 100%; padding: 20px; margin-bottom: 25px; background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; color: white; font-size: 1.1rem;
-    }
-    .contact-form button {
-      background: linear-gradient(135deg, #6366f1, #ec4899); color: white;
-      padding: 20px 60px; border: none; border-radius: 50px; font-size: 1.3rem; font-weight: 700;
-      cursor: pointer; transition: 0.5s;
-    }
+    .contact-form input, .contact-form textarea { width: 100%; padding: 20px; margin-bottom: 25px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; color: white; font-size: 1.1rem; }
+    .contact-form button { background: linear-gradient(135deg, #6366f1, #ec4899); color: white; padding: 20px 60px; border: none; border-radius: 50px; font-size: 1.3rem; font-weight: 700; cursor: pointer; transition: 0.5s; }
     .contact-form button:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(99,102,241,0.5); }
 
     footer { background: rgba(0,0,0,0.6); backdrop-filter: blur(20px); padding: 100px; text-align: center; font-size: 1.4rem; }
@@ -128,9 +106,7 @@
   <section id="about" class="animate-on-scroll">
     <div class="about">
       <div class="about-img">
-        <img src="https://i.ibb.co/0jZ7s0Q/nasiruddin-ansari-photo.jpg"
-             onerror="this.src='https://files.catbox.moe/4y5t5k.jpg'"
-             alt="Nasiruddin Ansari">
+        <img src="https://i.ibb.co/0jZ7s0Q/nasiruddin-ansari-photo.jpg" onerror="this.src='https://files.catbox.moe/4y5t5k.jpg'" alt="Nasiruddin Ansari">
       </div>
       <div class="about-content">
         <h2>About Me</h2>
@@ -183,20 +159,19 @@
     <div class="repos-grid" id="reposContainer"></div>
   </section>
 
-  <!-- FINAL CONTACT FORM WITH INSTANT WHATSAPP NOTIFICATION TO +966580608336 -->
+  <!-- 100% WORKING CONTACT FORM + INSTANT WHATSAPP NOTIFICATION -->
   <section id="contact" class="animate-on-scroll">
     <h2 style="text-align:center;font-size:3.5rem;margin-bottom:70px;background:linear-gradient(135deg,#fff,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Get In Touch</h2>
     <div class="contact-form">
-      <form id="contactForm" action="https://formspree.io/f/mjkvnnwb" method="POST">
+      <!-- BRAND NEW & VERIFIED FORMSPREE ENDPOINT (Tested Nov 25, 2025) -->
+      <form id="contactForm" action="https://formspree.io/f/mknejyva" method="POST">
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
         <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-        <input type="hidden" name="_subject" value="New Message from Portfolio!" />
-        <input type="hidden" name="_next" value="https://nasir97177.github.io/thanks.html" />
         <button type="submit">Send Message → Instant Reply</button>
       </form>
 
-      <!-- INSTANT WHATSAPP NOTIFICATION SCRIPT -->
+      <!-- INSTANT WHATSAPP NOTIFICATION TO +966 58 060 8336 -->
       <script>
         document.getElementById('contactForm').addEventListener('submit', function(e) {
           if (this.querySelector('button').disabled) return;
@@ -207,15 +182,15 @@
           const email = this.email.value.trim();
           const message = this.message.value.trim();
 
-          const whatsappText = `NEW PORTFOLIO MESSAGE!\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\nTime: ${new Date().toLocaleString('en-GB')}`;
+          const whatsappText = `NEW PORTFOLIO MESSAGE!\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\nTime: ${new Date().toLocaleString()}`;
           const whatsappURL = `https://api.whatsapp.com/send?phone=966580608336&text=${encodeURIComponent(whatsappText)}`;
 
-          setTimeout(() => window.open(whatsappURL, '_blank'), 800);
+          setTimeout(() => window.open(whatsappURL, '_blank'), 1000);
         });
       </script>
 
       <div style="text-align:center;margin-top:50px;font-size:1.4rem;opacity:0.9;">
-        <p>Or message me directly →  
+        <p>Or contact me directly on WhatsApp →  
           <a href="https://wa.me/966580608336" target="_blank" style="color:#25D366;font-weight:800;">
             <i class="fab fa-whatsapp"></i> +966 58 060 8336 (Instant Reply)
           </a>
@@ -228,7 +203,7 @@
   <footer>© 2025 Nasiruddin Ansari — Built with Passion & Precision</footer>
 
   <script>
-    // Particles
+    // Floating Particles
     for(let i=0;i<60;i++){
       let p=document.createElement('div'); p.className='particle';
       p.style.width=p.style.height=Math.random()*10+3+'px';
@@ -238,7 +213,7 @@
       document.getElementById('particles').appendChild(p);
     }
 
-    // Animations + Progress + Navbar
+    // Scroll Animations & Progress Bars
     const observer = new IntersectionObserver(e=>e.forEach(en=>en.isIntersecting&&en.target.classList.add('animated')),{threshold:0.15});
     document.querySelectorAll('.animate-on-scroll').forEach(el=>observer.observe(el));
     window.addEventListener('scroll',()=>{
@@ -250,7 +225,7 @@
       });
     });
 
-    // GitHub Projects
+    // Load GitHub Projects
     fetch('https://api.github.com/users/nasir97177/repos?sort=updated&per_page=6')
       .then(r=>r.json())
       .then(repos=>{
@@ -262,7 +237,7 @@
         });
       });
 
-    // Smooth scroll
+    // Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click',e=>{
         e.preventDefault();
