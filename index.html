@@ -10,7 +10,8 @@
     :root {
       --primary: #6366f1;
       --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
-      --glass: rgba(255, 255, 255, 0.15);
+      --glass: rgba(255, 255, 255, 0.12);
+      --glass-border: rgba(255, 255, 255, 0.2);
       --text: #ffffff;
       --dark: #0f172a;
     }
@@ -29,7 +30,7 @@
       top: 0; left: 0; width: 100%; height: 100%;
       background: var(--gradient);
       background-size: 400% 400%;
-      animation: gradient 15s ease infinite;
+      animation: gradient 20s ease infinite;
       z-index: -2;
     }
     @keyframes gradient {
@@ -47,9 +48,9 @@
     }
     .particle {
       position: absolute;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.15);
       border-radius: 50%;
-      animation: float 20s infinite linear;
+      animation: float 18s infinite linear;
     }
     @keyframes float {
       0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
@@ -58,39 +59,42 @@
       100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
     }
 
-    /* Navbar */
+    /* Floating Navbar */
     nav {
       position: fixed;
-      top: 20px; left: 50%; transform: translateX(-50%);
+      top: 25px; left: 50%; transform: translateX(-50%);
       background: var(--glass);
       backdrop-filter: blur(20px);
-      border-radius: 50px;
-      padding: 15px 40px;
+      border-radius: 60px;
+      padding: 18px 50px;
       z-index: 1000;
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+      transition: all 0.4s;
     }
+    nav.scrolled { top: 15px; padding: 14px 40px; }
     .logo {
-      font-size: 2rem;
+      font-size: 2.1rem;
       font-weight: 900;
-      background: linear-gradient(135deg, #fff, #a78bfa);
+      background: linear-gradient(135deg, #fff, #c4b5fd);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    nav ul { display: flex; gap: 30px; }
+    nav ul { display: flex; gap: 35px; }
     nav ul li a {
       color: white;
       font-weight: 600;
-      padding: 10px 20px;
+      padding: 12px 22px;
       border-radius: 30px;
       transition: all 0.4s;
+      position: relative;
     }
     nav ul li a:hover {
-      background: rgba(255,255,255,0.2);
-      transform: translateY(-3px);
+      background: rgba(255,255,255,0.25);
+      transform: translateY(-4px);
     }
 
-    /* Hero */
+    /* Hero Section */
     .hero {
       height: 100vh;
       display: flex;
@@ -100,37 +104,37 @@
       position: relative;
     }
     .hero-content {
-      animation: fadeInUp 1.5s ease;
+      animation: fadeInUp 1.8s ease;
     }
     .hero h1 {
-      font-size: 5.5rem;
+      font-size: 5.8rem;
       font-weight: 900;
-      background: linear-gradient(135deg, #fff, #ddd6fe, #c4b5fd);
+      background: linear-gradient(135deg, #ffffff, #e0e7ff, #c4b5fd);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 20px;
-      text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      letter-spacing: 2px;
     }
     .hero p {
-      font-size: 1.8rem;
-      margin-bottom: 40px;
-      opacity: 0.9;
+      font-size: 1.9rem;
+      margin-bottom: 50px;
+      opacity: 0.95;
     }
     .btn {
-      padding: 18px 45px;
+      padding: 20px 50px;
       margin: 15px;
       border-radius: 50px;
       font-weight: 700;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       transition: all 0.5s;
       position: relative;
       overflow: hidden;
       display: inline-block;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
     }
     .btn-primary {
       background: white;
       color: #4f46e5;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
     }
     .btn-outline {
       border: 3px solid white;
@@ -138,24 +142,24 @@
       color: white;
     }
     .btn:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+      transform: translateY(-12px) scale(1.08);
+      box-shadow: 0 30px 70px rgba(0,0,0,0.5);
     }
 
-    section { padding: 150px 5%; position: relative; }
+    section { padding: 160px 5%; position: relative; }
 
-    /* Section Animations */
+    /* Scroll Animation */
     .animate-on-scroll {
       opacity: 0;
-      transform: translateY(50px);
-      transition: all 1s ease;
+      transform: translateY(80px);
+      transition: all 1.2s ease;
     }
     .animate-on-scroll.animated {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* About */
+    /* About Section */
     .about {
       display: flex;
       align-items: center;
@@ -170,79 +174,200 @@
       text-align: center;
     }
     .about-img img {
-      width: 420px;
-      height: 420px;
+      width: 430px;
+      height: 430px;
       object-fit: cover;
       border-radius: 50%;
-      border: 20px solid rgba(255,255,255,0.15);
-      box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+      border: 22px solid rgba(255,255,255,0.18);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.6);
       transition: 0.8s;
-      animation: floatImage 6s ease-in-out infinite;
+      animation: floatImage 7s ease-in-out infinite;
     }
     @keyframes floatImage {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-30px); }
+      50% { transform: translateY(-35px); }
     }
     .about-img img:hover {
-      transform: scale(1.1) !important;
-      box-shadow: 0 50px 120px rgba(99, 102, 241, 0.6);
+      transform: scale(1.12) !important;
+      box-shadow: 0 60px 140px rgba(99, 102, 241, 0.7);
+    }
+    .about-content h2 {
+      font-size: 3.5rem;
+      background: linear-gradient(135deg, #fff, #ddd6fe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 30px;
+    }
+    .about-content p {
+      font-size: 1.45rem;
+      line-height: 2.2;
+      opacity: 0.95;
     }
 
     /* Skills */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      max-width: 1300px;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 35px;
+      max-width: 1400px;
       margin: 0 auto;
     }
     .skill-card {
       background: var(--glass);
       backdrop-filter: blur(20px);
-      padding: 40px;
-      border-radius: 30px;
+      padding: 45px;
+      border-radius: 35px;
       text-align: center;
-      border: 1px solid rgba(255,255,255,0.1);
-      transition: 0.6s;
+      border: 1px solid var(--glass-border);
+      transition: 0.7s;
     }
     .skill-card:hover {
-      transform: translateY(-25px) scale(1.05);
-      box-shadow: 0 40px 80px rgba(99,102,241,0.4);
+      transform: translateY(-30px) scale(1.08);
+      box-shadow: 0 50px 100px rgba(99,102,241,0.5);
     }
     .skill-card i {
-      font-size: 4.5rem;
+      font-size: 5rem;
       background: linear-gradient(135deg, #fff, #a78bfa);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+    }
+    .skill-card h3 { font-size: 1.6rem; margin-bottom: 15px; }
+    .progress-container {
+      height: 18px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    .progress {
+      height: 100%;
+      background: linear-gradient(90deg, #6366f1, #ec4899);
+      width: 0;
+      transition: width 2.5s ease;
+      border-radius: 15px;
     }
 
-    /* Timeline */
-    .timeline::before {
-      background: linear-gradient(to bottom, #6366f1, #ec4899);
-      width: 8px;
+    /* Experience Timeline */
+    .timeline {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
     }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      width: 8px;
+      background: linear-gradient(to bottom, #6366f1, #ec4899);
+      top: 0; bottom: 0; left: 50%;
+      margin-left: -4px;
+      border-radius: 10px;
+    }
+    .timeline-item {
+      padding: 30px 50px;
+      position: relative;
+      width: 50%;
+    }
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 32px; height: 32px;
+      background: white;
+      border: 8px solid #6366f1;
+      top: 40px;
+      border-radius: 50%;
+      box-shadow: 0 0 0 8px rgba(99,102,241,0.3);
+      z-index: 1;
+    }
+    .timeline-item.left::after { right: -16px; }
+    .timeline-item.right { left: 50%; }
+    .timeline-item.right::after { left: -16px; }
     .timeline-content {
       background: var(--glass);
       backdrop-filter: blur(20px);
-      border: 1px solid rgba(255,255,255,0.1);
+      padding: 35px;
+      border-radius: 30px;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+
+    /* Projects & Contact */
+    .repos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 35px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .repo-card {
+      background: var(--glass);
+      backdrop-filter: blur(20px);
+      padding: 35px;
+      border-radius: 30px;
+      border: 1px solid var(--glass-border);
+      transition: 0.6s;
+    }
+    .repo-card:hover {
+      transform: translateY(-20px);
+      box-shadow: 0 40px 80px rgba(99,102,241,0.4);
+    }
+
+    .contact-form form {
+      background: var(--glass);
+      backdrop-filter: blur(20px);
+      padding: 60px;
+      border-radius: 40px;
+      border: 1px solid var(--glass-border);
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 20px;
+      margin-bottom: 25px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      color: white;
+      font-size: 1.1rem;
+    }
+    .contact-form button {
+      background: linear-gradient(135deg, #6366f1, #ec4899);
+      color: white;
+      padding: 20px 60px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+    .contact-form button:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(99,102,241,0.5);
     }
 
     footer {
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.6);
       backdrop-filter: blur(20px);
-      padding: 80px;
+      padding: 100px;
       text-align: center;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
 
     @media (max-width: 768px) {
-      .hero h1 { font-size: 3.5rem; }
-      .about { flex-direction: column; text-align: center; gap: 50px; }
-      .about-img img { width: 320px; height: 320px; }
-      nav { padding: 12px 20px; top: 10px; }
+      .hero h1 { font-size: 3.8rem; }
+      .hero p { font-size: 1.4rem; }
+      .about { flex-direction: column; text-align: center; gap: 60px; }
+      .about-img img { width: 340px; height: 340px; }
+      nav { padding: 15px 25px; top: 15px; }
       nav ul { gap: 15px; }
-      nav ul li a { padding: 8px 15px; font-size: 0.9rem; }
+      nav ul li a { padding: 10px 15px; font-size: 0.95rem; }
+      .timeline::before { left: 40px; }
+      .timeline-item { width: 100%; padding-left: 100px; left: 0 !important; }
+      .timeline-item::after { left: 26px !important; }
     }
   </style>
 </head>
@@ -251,7 +376,7 @@
   <div class="bg-animation"></div>
   <div class="particles" id="particles"></div>
 
-  <nav>
+  <nav id="navbar">
     <div class="logo">Nasiruddin Ansari</div>
     <ul>
       <li><a href="#about">About</a></li>
@@ -265,10 +390,10 @@
   <section class="hero">
     <div class="hero-content">
       <h1>Nasiruddin Ansari</h1>
-      <p>Senior ERPNext Consultant & Developer</p>
+      <p>Senior ERPNext Consultant & Developer | IT Infrastructure Expert</p>
       <div>
         <a href="#contact" class="btn btn-primary">Hire Me Now</a>
-        <a href="https://github.com/nasir97177" target="_blank" class="btn btn-outline">GitHub Profile</a>
+        <a href="https://github.com/nasir97177" target="_blank" class="btn btn-outline">View GitHub</a>
       </div>
     </div>
   </section>
@@ -276,60 +401,157 @@
   <section id="about" class="animate-on-scroll">
     <div class="about">
       <div class="about-img">
-        <!-- 100% WORKING PHOTO WITH MULTIPLE BACKUPS -->
         <img src="https://i.ibb.co/0jZ7s0Q/nasiruddin-ansari-photo.jpg"
              onerror="this.src='https://files.catbox.moe/4y5t5k.jpg'"
              alt="Nasiruddin Ansari">
       </div>
-      <div class="about-content animate-on-scroll">
-        <h2 style="font-size: 3rem; margin-bottom: 30px; background: linear-gradient(135deg, #fff, #ddd6fe); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-          About Me
-        </h2>
-        <p style="font-size: 1.4rem; line-height: 2; opacity: 0.9;">
-          Master of Computer Applications with <strong>12+ years</strong> of expertise in ERPNext, Odoo, NetSuite & SAP.<br><br>
-          Expert in custom development, workflow automation, cloud infrastructure, and enterprise solutions.<br><br>
-          Currently based in <strong>Riyadh, Saudi Arabia</strong> — delivering world-class ERP implementations across the Middle East.
-        </p>
+      <div class="about-content">
+        <h2>About Me</h2>
+        <p>Master of Computer Applications (MCA) with <strong>12+ years</strong> of proven expertise in ERPNext, Odoo, Oracle NetSuite, and SAP implementations.</p>
+        <p>Specialized in custom module development, workflow automation, cloud infrastructure, API integrations, and enterprise-grade IT solutions.</p>
+        <p>Currently based in <strong>Riyadh, Saudi Arabia</strong> — delivering scalable business solutions across the Middle East.</p>
       </div>
     </div>
   </section>
 
-  <!-- Add other sections (Skills, Experience, etc.) with same glass + animation style -->
-  <!-- Due to length, full code available in downloadable version below -->
+  <section id="skills" class="animate-on-scroll">
+    <h2 style="text-align:center; font-size:3.5rem; margin-bottom:70px; background:linear-gradient(135deg,#fff,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Core Competencies</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <i class="fas fa-cogs"></i>
+        <h3>ERP Systems</h3>
+        <p>ERPNext • Odoo • NetSuite • SAP</p>
+        <div class="progress-container"><div class="progress" data-percent="95"></div></div>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-code"></i>
+        <h3>Development</h3>
+        <p>Python • JavaScript • Frappe • REST APIs</p>
+        <div class="progress-container"><div class="progress" data-percent="92"></div></div>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-server"></i>
+        <h3>DevOps & Infrastructure</h3>
+        <p>Linux • Docker • Nginx • AWS • Bench CLI</p>
+        <div class="progress-container"><div class="progress" data-percent="88"></div></div>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-database"></i>
+        <h3>Database & Integration</h3>
+        <p>MariaDB • PostgreSQL • MySQL • JSON</p>
+        <div class="progress-container"><div class="progress" data-percent="90"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="animate-on-scroll">
+    <h2 style="text-align:center; font-size:3.5rem; margin-bottom:80px; background:linear-gradient(135deg,#fff,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Professional Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <h3>ERPNext Consultant & Developer</h3>
+          <p><strong>Abana Al Arabiya Company • Riyadh, KSA</strong><br>Dec 2020 – Present</p>
+          <p>Leading full-cycle ERPNext implementation, custom modules, portal integration, and IT infrastructure management.</p>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="timeline-content">
+          <h3>Senior ERPNext Developer & IT Admin</h3>
+          <p><strong>Kemyea Yanbu • Yanbu, KSA</strong><br>Mar 2018 – Nov 2020</p>
+          <p>Managed upgrades, workflow automation, email/website integration, and enterprise support.</p>
+        </div>
+      </div>
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <h3>ERP Support & Network Administrator</h3>
+          <p><strong>Ablaze Info Solutions • India</strong><br>Dec 2015 – Feb 2018</p>
+          <p>Handled ERP systems, network security, LAN/WAN, and end-user training.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="animate-on-scroll">
+    <h2 style="text-align:center; font-size:3.5rem; margin-bottom:70px; background:linear-gradient(135deg,#fff,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Featured Projects</h2>
+    <div class="repos-grid" id="reposContainer"></div>
+  </section>
+
+  <section id="contact" class="animate-on-scroll">
+    <h2 style="text-align:center; font-size:3.5rem; margin-bottom:70px; background:linear-gradient(135deg,#fff,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Get In Touch</h2>
+    <div class="contact-form">
+      <form action="https://formspree.io/f/mayvlvrk" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="_replyto" placeholder="Your Email" required />
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div style="text-align:center; margin-top:40px; font-size:1.3rem; opacity:0.9;">
+        <p>Email: nasiruddin.ansari@mail.com</p>
+        <p>Phone: +966 58 060 8336 • +91 82714 04838</p>
+        <p>Riyadh, Saudi Arabia</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Nasiruddin Ansari — Built with Passion & Precision</p>
+  </footer>
 
   <script>
     // Floating Particles
     const particlesContainer = document.getElementById('particles');
-    for(let i = 0; i < 50; i++) {
+    for(let i = 0; i < 60; i++) {
       const p = document.createElement('div');
       p.classList.add('particle');
-      p.style.width = p.style.height = Math.random() * 8 + 'px';
+      p.style.width = p.style.height = Math.random() * 10 + 3 + 'px';
       p.style.left = Math.random() * 100 + '%';
       p.style.animationDelay = Math.random() * 20 + 's';
-      p.style.animationDuration = 15 + Math.random() * 20 + 's';
+      p.style.animationDuration = 15 + Math.random() * 25 + 's';
       particlesContainer.appendChild(p);
     }
 
-    // Scroll Animations
+    // Scroll Animations & Navbar
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animated');
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.15 });
 
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-      observer.observe(el);
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 100);
+      document.querySelectorAll('.progress').forEach(bar => {
+        if (bar.getBoundingClientRect().top < window.innerHeight - 100) {
+          bar.style.width = bar.dataset.percent + '%';
+        }
+      });
     });
 
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
+    // Load GitHub Projects
+    fetch('https://api.github.com/users/nasir97177/repos?sort=updated&per_page=6')
+      .then(r => r.json())
+      .then(repos => {
+        const container = document.getElementById('reposContainer');
+        repos.forEach(repo => {
+          const card = document.createElement('div');
+          card.className = 'repo-card';
+          card.innerHTML = `
+            <h3>${repo.name}</h3>
+            <p>${repo.description || 'No description available'}</p>
+            <a href="${repo.html_url}" target="_blank">View on GitHub</a>
+          `;
+          container.appendChild(card);
         });
+      });
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
     });
   </script>
