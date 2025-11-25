@@ -7,76 +7,95 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    /* Reset & Base Styles */
+    :root {
+      --primary: #4f46e5;
+      --bg-light: #f5f7fa;
+      --bg-dark: #1f2937;
+      --text-light: #fff;
+      --text-dark: #333;
+    }
+    [data-theme="dark"] {
+      --bg-light: #1f2937;
+      --bg-dark: #f5f7fa;
+      --text-light: #fff;
+      --text-dark: #f5f7fa;
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; background: #f5f7fa; }
+    body { font-family: 'Roboto', sans-serif; line-height: 1.6; background: var(--bg-light); color: var(--text-dark); transition: 0.3s; }
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
-    section { padding: 80px 20px; }
-    h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
 
     /* Navbar */
     nav {
-      position: fixed; width: 100%; background: #1f2937; color: #fff; top: 0; left: 0; z-index: 999;
+      position: fixed; width: 100%; background: var(--bg-dark); color: var(--text-light); top: 0; left: 0; z-index: 999;
       display: flex; justify-content: space-between; align-items: center; padding: 15px 50px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
     nav .logo { font-size: 24px; font-weight: 700; }
-    nav ul { display: flex; gap: 30px; }
-    nav ul li a { color: #fff; font-weight: 500; transition: 0.3s; }
-    nav ul li a:hover { color: #4f46e5; }
+    nav ul { display: flex; gap: 25px; }
+    nav ul li a { color: var(--text-light); font-weight: 500; transition: 0.3s; }
+    nav ul li a:hover { color: var(--primary); }
 
-    /* Hero */
+    /* Theme toggle button */
+    .theme-toggle { cursor: pointer; font-size: 20px; margin-left: 20px; }
+
+    /* Hero Section */
     .hero {
       min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-      background: linear-gradient(to right, #4f46e5, #3b82f6); color: #fff;
-      padding: 0 20px;
+      background: linear-gradient(to right, #4f46e5, #3b82f6); color: #fff; padding: 0 20px;
     }
     .hero h1 { font-size: 48px; margin-bottom: 15px; }
     .hero p { font-size: 20px; margin-bottom: 25px; }
     .hero .btn { background: #fff; color: #4f46e5; padding: 12px 25px; border-radius: 30px; font-weight: 600; margin: 5px; display: inline-block; transition: 0.3s; }
     .hero .btn:hover { background: #4f46e5; color: #fff; }
 
-    /* Sections */
-    .section-title { text-align: center; margin-bottom: 50px; color: #1f2937; }
+    /* Section Titles */
+    .section-title { text-align: center; margin-bottom: 50px; color: var(--text-dark); }
     .section-title h2 { font-size: 36px; position: relative; display: inline-block; }
-    .section-title h2::after { content: ''; position: absolute; width: 50%; height: 4px; background: #4f46e5; bottom: -10px; left: 25%; border-radius: 2px; }
+    .section-title h2::after { content: ''; position: absolute; width: 50%; height: 4px; background: var(--primary); bottom: -10px; left: 25%; border-radius: 2px; }
 
-    /* About */
+    /* About Section */
     .about { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px; }
     .about img { width: 250px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
     .about .content { max-width: 700px; }
     .about .content p { margin-bottom: 15px; }
 
-    /* Skills */
+    /* Skills Section */
     .skills { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; }
-    .skill { background: #fff; padding: 20px; border-radius: 12px; width: 250px; box-shadow: 0 8px 15px rgba(0,0,0,0.1); text-align: center; transition: 0.3s; }
+    .skill { background: var(--bg-dark); color: var(--text-light); padding: 20px; border-radius: 12px; width: 250px; box-shadow: 0 8px 15px rgba(0,0,0,0.1); text-align: center; transition: 0.3s; }
     .skill:hover { transform: translateY(-5px); }
-    .skill h3 { margin-bottom: 10px; color: #4f46e5; }
-    .skill i { font-size: 32px; margin-bottom: 10px; color: #4f46e5; }
+    .skill h3 { margin-bottom: 10px; color: var(--primary); }
+    .skill i { font-size: 32px; margin-bottom: 10px; color: var(--primary); }
+    .progress-bar { background: #ddd; border-radius: 10px; overflow: hidden; height: 12px; margin-top: 8px; }
+    .progress { height: 12px; width: 0; background: var(--primary); border-radius: 10px; transition: 1s; }
 
-    /* Experience */
+    /* Timeline / Experience */
     .timeline { max-width: 900px; margin: auto; position: relative; }
-    .timeline::after { content: ''; position: absolute; width: 6px; background: #4f46e5; top: 0; bottom: 0; left: 50%; margin-left: -3px; }
+    .timeline::after { content: ''; position: absolute; width: 6px; background: var(--primary); top: 0; bottom: 0; left: 50%; margin-left: -3px; }
     .timeline-item { padding: 20px 30px; position: relative; background: inherit; width: 50%; }
     .timeline-item.left { left: 0; }
     .timeline-item.right { left: 50%; }
-    .timeline-item::after { content: ""; position: absolute; width: 25px; height: 25px; right: -13px; background: #4f46e5; border: 4px solid #fff; top: 15px; border-radius: 50%; z-index: 1; }
+    .timeline-item::after { content: ""; position: absolute; width: 25px; height: 25px; right: -13px; background: var(--primary); border: 4px solid var(--bg-light); top: 15px; border-radius: 50%; z-index: 1; }
     .timeline-item.right::after { left: -13px; }
-    .timeline-item h3 { margin-bottom: 5px; color: #1f2937; }
+    .timeline-item h3 { margin-bottom: 5px; color: var(--text-dark); }
     .timeline-item span { font-size: 14px; color: #555; }
-    .timeline-item p { margin-top: 10px; color: #333; }
+    .timeline-item p { margin-top: 10px; color: var(--text-dark); }
 
-    /* Contact */
-    .contact-form { max-width: 600px; margin: auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    /* GitHub Repos */
+    .repos { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; }
+    .repo { background: var(--bg-dark); color: var(--text-light); padding: 15px; border-radius: 12px; width: 250px; box-shadow: 0 8px 15px rgba(0,0,0,0.1); transition: 0.3s; }
+    .repo:hover { transform: translateY(-5px); }
+    .repo a { color: var(--primary); font-weight: 600; }
+
+    /* Contact Section */
+    .contact-form { max-width: 600px; margin: auto; background: var(--bg-dark); color: var(--text-light); padding: 30px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
     .contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ccc; }
-    .contact-form button { background: #4f46e5; color: #fff; padding: 12px 25px; border-radius: 30px; border: none; font-weight: 600; cursor: pointer; transition: 0.3s; }
+    .contact-form button { background: var(--primary); color: #fff; padding: 12px 25px; border-radius: 30px; border: none; font-weight: 600; cursor: pointer; transition: 0.3s; }
     .contact-form button:hover { background: #3b82f6; }
 
-    /* Footer */
-    footer { text-align: center; padding: 20px; background: #1f2937; color: #fff; }
+    footer { text-align: center; padding: 20px; background: var(--bg-dark); color: var(--text-light); }
 
-    /* Responsive */
     @media(max-width: 768px){
       .about { flex-direction: column; }
       .timeline-item { width: 100%; left: 0; padding-left: 50px; padding-right: 25px; }
@@ -86,7 +105,7 @@
     }
   </style>
 </head>
-<body>
+<body data-theme="light">
 
   <!-- Navbar -->
   <nav>
@@ -95,8 +114,9 @@
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#repos">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="https://github.com/nasir97177" target="_blank">GitHub</a></li>
+      <li><i class="fas fa-moon theme-toggle" id="themeToggle"></i></li>
     </ul>
   </nav>
 
@@ -114,8 +134,8 @@
     <div class="about">
       <img src="https://avatars.githubusercontent.com/u/97177?v=4" alt="Nasiruddin Ansari">
       <div class="content">
-        <p>Master of Computer Application with over 12 years of experience in ERP software development, consultation, implementation, and IT infrastructure management. Skilled in ERPNext, Odoo, Oracle NetSuite, and SAP customization.</p>
-        <p>Strong expertise in accounting, manufacturing, inventory, HR, CRM modules, and creating automation across organizations. Experienced in cloud servers, network configuration, system security, and project management.</p>
+        <p>Master of Computer Application with 12+ years of experience in ERP software development, IT infrastructure, and automation solutions. Skilled in ERPNext, Odoo, Oracle NetSuite, SAP, and website integrations.</p>
+        <p>Expert in accounting, HR, manufacturing, inventory, CRM, workflow automation, cloud servers, network management, and project implementation.</p>
       </div>
     </div>
   </section>
@@ -124,12 +144,30 @@
   <section id="skills">
     <div class="section-title"><h2>Skills</h2></div>
     <div class="skills">
-      <div class="skill"><i class="fas fa-cogs"></i><h3>ERP Systems</h3><p>ERPNext, Odoo, NetSuite, SAP</p></div>
-      <div class="skill"><i class="fas fa-code"></i><h3>Programming</h3><p>Python, JavaScript, HTML, CSS, jQuery</p></div>
-      <div class="skill"><i class="fas fa-server"></i><h3>DevOps & Server</h3><p>Linux, Bench CLI, Nginx, SSL, Cloud Servers</p></div>
-      <div class="skill"><i class="fas fa-database"></i><h3>Database</h3><p>MariaDB, MySQL, REST API, JSON</p></div>
-      <div class="skill"><i class="fas fa-project-diagram"></i><h3>Project Management</h3><p>PMP Knowledge, Jira, Trello</p></div>
-      <div class="skill"><i class="fas fa-laptop-code"></i><h3>Web Development</h3><p>Responsive UI, Website Design, GitHub</p></div>
+      <div class="skill">
+        <i class="fas fa-cogs"></i>
+        <h3>ERP Systems</h3>
+        <p>ERPNext, Odoo, NetSuite, SAP</p>
+        <div class="progress-bar"><div class="progress" data-value="95%"></div></div>
+      </div>
+      <div class="skill">
+        <i class="fas fa-code"></i>
+        <h3>Programming</h3>
+        <p>Python, JavaScript, HTML, CSS</p>
+        <div class="progress-bar"><div class="progress" data-value="90%"></div></div>
+      </div>
+      <div class="skill">
+        <i class="fas fa-server"></i>
+        <h3>DevOps & Servers</h3>
+        <p>Linux, Nginx, Bench CLI, Cloud</p>
+        <div class="progress-bar"><div class="progress" data-value="85%"></div></div>
+      </div>
+      <div class="skill">
+        <i class="fas fa-database"></i>
+        <h3>Database & API</h3>
+        <p>MariaDB, MySQL, REST API, JSON</p>
+        <div class="progress-bar"><div class="progress" data-value="90%"></div></div>
+      </div>
     </div>
   </section>
 
@@ -137,36 +175,29 @@
   <section id="experience">
     <div class="section-title"><h2>Experience</h2></div>
     <div class="timeline">
-      <!-- Abana Al Arabiya -->
       <div class="timeline-item left">
         <h3>ERPNext Consultant & Developer</h3>
         <span>Abana Al Arabiya Company, Riyadh | Dec 2020 - Present</span>
-        <p>Handling ERP modules, website integration, email server configuration, portal creation, IT infrastructure, and end-user support.</p>
+        <p>Handling ERP modules, website integration, portal creation, email server configuration, IT infrastructure, and end-user support.</p>
       </div>
-      <!-- Kemyea Yanbu -->
       <div class="timeline-item right">
         <h3>ERPNext Developer & IT Admin</h3>
         <span>Kemyea Yanbu, KSA | Mar 2018 - Nov 2020</span>
         <p>Upgrading ERP software, portal creation, workflow optimization, email server & website management, IT support, and troubleshooting.</p>
       </div>
-      <!-- Ablaze Info Solutions -->
       <div class="timeline-item left">
         <h3>ERP Support & Network Administrator</h3>
         <span>Ablaze Info Solutions Pvt. Ltd | Dec 2015 - Feb 2018</span>
         <p>ERP system management, network setup, LAN/WAN, troubleshooting, and system security administration.</p>
       </div>
-      <!-- Aspire Info-Tech -->
-      <div class="timeline-item right">
-        <h3>System Assistant & Network Administrator</h3>
-        <span>Aspire Info-Tech Pvt. Ltd | Apr 2013 - Nov 2015</span>
-        <p>Network infrastructure, server administration, troubleshooting, and monitoring for performance and security.</p>
-      </div>
-      <!-- Disha Technology -->
-      <div class="timeline-item left">
-        <h3>Jr. IT Officer</h3>
-        <span>Disha Technology Pvt. Ltd | Apr 2011 - Mar 2013</span>
-        <p>Hardware troubleshooting, IT support, system upgrades, and supervising supporting staff.</p>
-      </div>
+    </div>
+  </section>
+
+  <!-- GitHub Projects Section -->
+  <section id="repos">
+    <div class="section-title"><h2>GitHub Projects</h2></div>
+    <div class="repos" id="reposContainer">
+      <!-- Repos will be dynamically loaded here -->
     </div>
   </section>
 
@@ -180,25 +211,59 @@
         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
-      <p style="text-align:center; margin-top:15px;">Or reach me at: <strong>nasiruddin.ansari@mail.com</strong></p>
-      <p style="text-align:center;"><strong>Phone:</strong> +966-580608336 | +91-8271404838</p>
+      <p style="text-align:center; margin-top:15px;">Email: <strong>nasiruddin.ansari@mail.com</strong></p>
+      <p style="text-align:center;">Phone: +966-580608336 | +91-8271404838</p>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Nasiruddin Ansari. All Rights Reserved.</p>
   </footer>
 
-  <!-- Smooth Scroll -->
   <script>
-    const links = document.querySelectorAll('nav ul li a');
-    for (const link of links) {
+    // Smooth scroll
+    const links = document.querySelectorAll('nav ul li a:not(.theme-toggle)');
+    links.forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
         document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
+    });
+
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+      themeToggle.classList.toggle('fa-moon');
+      themeToggle.classList.toggle('fa-sun');
+    });
+
+    // Animate progress bars
+    const progressBars = document.querySelectorAll('.progress');
+    window.addEventListener('scroll', () => {
+      progressBars.forEach(bar => {
+        const barTop = bar.getBoundingClientRect().top;
+        if(barTop < window.innerHeight - 50){
+          bar.style.width = bar.dataset.value;
+        }
+      });
+    });
+
+    // Fetch GitHub repos
+    async function fetchRepos() {
+      const res = await fetch('https://api.github.com/users/nasir97177/repos?sort=updated&per_page=6');
+      const repos = await res.json();
+      const container = document.getElementById('reposContainer');
+      repos.forEach(repo => {
+        const div = document.createElement('div');
+        div.classList.add('repo');
+        div.innerHTML = `<h3>${repo.name}</h3>
+                         <p>${repo.description || 'No description available.'}</p>
+                         <a href="${repo.html_url}" target="_blank">View on GitHub</a>`;
+        container.appendChild(div);
+      });
     }
+    fetchRepos();
   </script>
 </body>
 </html>
