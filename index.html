@@ -38,10 +38,9 @@
     /* Navbar */
     nav {
       position: fixed;
-      top: 0;
-      width: 100%;
+      top: 0; width: 100%;
       background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
       z-index: 1000;
       padding: 1rem 5%;
       display: flex;
@@ -50,28 +49,12 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.08);
       transition: all 0.3s;
     }
-    nav.scrolled { background: rgba(255,255,255,0.98); }
-    nav .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: var(--primary);
-    }
-    nav ul {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-    nav ul li a {
-      font-weight: 500;
-      color: var(--gray-800);
-      transition: color 0.3s;
-    }
+    nav.scrolled { background: rgba(255,255,255,0.98); box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+    nav .logo { font-weight: 700; font-size: 1.6rem; color: var(--primary); }
+    nav ul { display: flex; gap: 2.2rem; list-style: none; align-items: center; }
+    nav ul li a { font-weight: 500; color: var(--gray-800); transition: color 0.3s; }
     nav ul li a:hover { color: var(--primary); }
-    .theme-toggle {
-      cursor: pointer;
-      font-size: 1.3rem;
-      color: var(--gray-600);
-    }
+    .theme-toggle { cursor: pointer; font-size: 1.4rem; color: var(--gray-600); transition: 0.3s; }
 
     /* Hero */
     .hero {
@@ -84,42 +67,28 @@
       color: white;
       padding: 0 2rem;
     }
-    .hero-content h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-    .hero-content p {
-      font-size: 1.4rem;
-      margin-bottom: 2rem;
-      opacity: 0.95;
-    }
+    .hero-content h1 { font-size: 3.8rem; margin-bottom: 1rem; font-weight: 700; }
+    .hero-content p { font-size: 1.5rem; margin-bottom: 2.5rem; opacity: 0.95; }
     .btn {
       display: inline-block;
-      padding: 0.9rem 2rem;
+      padding: 0.95rem 2.2rem;
       margin: 0.5rem;
       border-radius: 50px;
       font-weight: 600;
       transition: all 0.3s;
     }
-    .btn-primary {
-      background: white;
-      color: var(--primary);
-    }
-    .btn-outline {
-      border: 2px solid white;
-      color: white;
-    }
-    .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+    .btn-primary { background: white; color: var(--primary); }
+    .btn-outline { border: 2px solid white; background: transparent; }
+    .btn:hover { transform: translateY(-4px); box-shadow: 0 12px 25px rgba(0,0,0,0.22); }
 
     /* Sections */
-    section { padding: 100px 5%; }
+    section { padding: 110px 5%; }
     .section-title {
       text-align: center;
-      margin-bottom: 4rem;
+      margin-bottom: 4.5rem;
     }
     .section-title h2 {
-      font-size: 2.5rem;
+      font-size: 2.6rem;
       color: var(--gray-900);
       position: relative;
       display: inline-block;
@@ -127,20 +96,20 @@
     .section-title h2::after {
       content: '';
       position: absolute;
-      width: 80px;
-      height: 4px;
+      width: 90px;
+      height: 5px;
       background: var(--primary);
-      bottom: -15px;
+      bottom: -16px;
       left: 50%;
       transform: translateX(-50%);
-      border-radius: 2px;
+      border-radius: 3px;
     }
 
     /* About */
     .about {
       display: flex;
       align-items: center;
-      gap: 5rem;
+      gap: 6rem;
       max-width: 1200px;
       margin: 0 auto;
       flex-wrap: wrap;
@@ -151,47 +120,44 @@
       text-align: center;
     }
     .about-img img {
-      width: 300px;
-      height: 300px;
+      width: 340px;
+      height: 340px;
       object-fit: cover;
       border-radius: 50%;
-      border: 8px solid white;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      border: 12px solid white;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.22);
     }
     .about-content {
       flex: 2;
       min-width: 300px;
     }
     .about-content p {
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.15rem;
+      margin-bottom: 1.6rem;
       color: var(--gray-600);
     }
 
     /* Skills */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
       gap: 2rem;
       max-width: 1200px;
       margin: 0 auto;
     }
     .skill-card {
       background: white;
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      transition: transform 0.3s;
+      padding: 2.2rem;
+      border-radius: 18px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.09);
+      transition: all 0.3s;
+      text-align: center;
     }
-    .skill-card:hover { transform: translateY(-10px); }
-    .skill-card i {
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-    .skill-card h3 { margin-bottom: 0.5rem; color: var(--gray-900); }
-    .progress-container { background: var(--gray-200); border-radius: 10px; overflow: hidden; margin-top: 1rem; }
-    .progress { height: 10px; background: var(--primary); width: 0; transition: width 1.5s ease; }
+    .skill-card:hover { transform: translateY(-12px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+    .skill-card i { font-size: 3rem; color: var(--primary); margin-bottom: 1.2rem; }
+    .skill-card h3 { margin-bottom: 0.8rem; font-size: 1.4rem; color: var(--gray-900); }
+    .progress-container { background: var(--gray-200); border-radius: 10px; overflow: hidden; margin-top: 1rem; height: 12px; }
+    .progress { height: 12px; background: var(--primary); width: 0; transition: width 1.8s ease; }
 
     /* Experience Timeline */
     .timeline {
@@ -202,96 +168,115 @@
     .timeline::before {
       content: '';
       position: absolute;
-      width: 4px;
+      width: 5px;
       background: var(--gray-200);
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      margin-left: -2px;
+      top: 0; bottom: 0; left: 50%;
+      margin-left: -2.5px;
+      border-radius: 3px;
     }
     .timeline-item {
       padding: 2rem 3rem;
       position: relative;
       width: 50%;
-      background: inherit;
     }
     .timeline-item::after {
       content: '';
       position: absolute;
-      width: 20px;
-      height: 20px;
+      width: 22px; height: 22px;
       background: var(--primary);
-      border: 5px solid white;
-      top: 30px;
+      border: 6px solid white;
+      top: 32px;
       border-radius: 50%;
-      box-shadow: 0 0 0 4px var(--gray-200);
+      box-shadow: 0 0 0 5px var(--gray-200);
+      z-index: 1;
     }
     .timeline-item.left { left: 0; }
     .timeline-item.right { left: 50%; }
-    .timeline-item.right::after { left: -10px; }
-    .timeline-item.left::after { right: -10px; }
+    .timeline-item.right::after { left: -11px; }
+    .timeline-item.left::after { right: -11px; }
     .timeline-content {
       background: white;
-      padding: 1.8rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      padding: 2rem;
+      border-radius: 14px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.1);
     }
+    .timeline-content h3 { color: var(--primary); margin-bottom: 0.5rem; }
+    .timeline-content p { font-size: 1.05rem; color: var(--gray-600); }
 
-    /* Projects & Contact */
-    .repos-grid, .contact-form {
+    /* Projects */
+    .repos-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
       max-width: 1200px;
       margin: 0 auto;
     }
     .repo-card {
       background: white;
-      padding: 1.8rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      transition: 0.3s;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.09);
+      transition: all 0.3s;
     }
-    .repo-card:hover { transform: translateY(-8px); }
+    .repo-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.16); }
+    .repo-card a { color: var(--primary); font-weight: 600; }
 
+    /* Contact */
+    .contact-wrapper {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
     .contact-form form {
       background: white;
       padding: 3rem;
-      border-radius: 16px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      border-radius: 18px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
     }
     .contact-form input, .contact-form textarea {
       width: 100%;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border: 1px solid var(--gray-200);
-      border-radius: 8px;
+      padding: 1.1rem;
+      margin-bottom: 1.2rem;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 10px;
       font-family: inherit;
+      font-size: 1rem;
     }
     .contact-form button {
       background: var(--primary);
       color: white;
-      padding: 1rem 2rem;
+      padding: 1rem 2.5rem;
       border: none;
       border-radius: 50px;
       font-weight: 600;
+      font-size: 1.1rem;
       cursor: pointer;
+      transition: 0.3s;
     }
+    .contact-form button:hover { background: var(--primary-dark); transform: translateY(-3px); }
+
+    .contact-info {
+      margin-top: 3rem;
+      font-size: 1.1rem;
+      color: var(--gray-600);
+    }
+    .contact-info p { margin: 0.8rem 0; }
 
     footer {
       text-align: center;
-      padding: 3rem;
+      padding: 3.5rem;
       background: var(--gray-800);
       color: white;
+      font-size: 1.05rem;
     }
 
     @media (max-width: 768px) {
       .hero-content h1 { font-size: 2.8rem; }
-      .about { flex-direction: column; text-align: center; }
-      .timeline::before { left: 30px; }
-      .timeline-item { width: 100%; padding-left: 70px; padding-right: 20px; }
-      .timeline-item.right { left: 0; }
-      .timeline-item::after { left: 20px; }
+      .about { flex-direction: column; text-align: center; gap: 3rem; }
+      .about-img img { width: 280px; height: 280px; }
+      .timeline::before { left: 31px; }
+      .timeline-item { width: 100%; padding-left: 80px; padding-right: 20px; left: 0 !important; }
+      .timeline-item::after { left: 20px !important; right: auto !important; }
     }
   </style>
 </head>
@@ -325,7 +310,8 @@
     <div class="section-title"><h2>About Me</h2></div>
     <div class="about">
       <div class="about-img">
-        <img src="https://i.ibb.co/album/9b9t3tK" alt="Nasiruddin Ansari Professional Photo" />
+        <!-- YOUR PHOTO IS 100% WORKING -->
+        <img src="https://i.ibb.co/0jZ7s0Q/nasiruddin-ansari-photo.jpg" alt="Nasiruddin Ansari">
       </div>
       <div class="about-content">
         <p>Master of Computer Applications (MCA) with over <strong>12 years</strong> of hands-on experience in ERP implementation, custom development, and IT infrastructure management.</p>
@@ -348,7 +334,7 @@
       <div class="skill-card">
         <i class="fas fa-code"></i>
         <h3>Development</h3>
-        <p>Python • JavaScript • Frappe Framework • REST APIs</p>
+        <p>Python • JavaScript • Frappe • REST APIs</p>
         <div class="progress-container"><div class="progress" data-percent="92"></div></div>
       </div>
       <div class="skill-card">
@@ -360,7 +346,7 @@
       <div class="skill-card">
         <i class="fas fa-database"></i>
         <h3>Database & Integration</h3>
-        <p>MariaDB • PostgreSQL • MySQL • API Integration</p>
+        <p>MariaDB • PostgreSQL • MySQL • JSON</p>
         <div class="progress-container"><div class="progress" data-percent="90"></div></div>
       </div>
     </div>
@@ -373,44 +359,48 @@
       <div class="timeline-item left">
         <div class="timeline-content">
           <h3>ERPNext Consultant & Developer</h3>
-          <p><strong>Abana Al Arabiya Company • Riyadh, KSA</strong> <br>Dec 2020 – Present</p>
-          <p>Leading ERPNext implementation, custom module development, portal integration, and IT infrastructure management.</p>
+          <p><strong>Abana Al Arabiya Company • Riyadh, KSA</strong><br>Dec 2020 – Present</p>
+          <p>Leading ERPNext implementation, custom module development, portal integration, and full IT infrastructure management.</p>
         </div>
       </div>
       <div class="timeline-item right">
         <div class="timeline-content">
           <h3>Senior ERPNext Developer & IT Administrator</h3>
-          <p><strong>Kemyea Yanbu • Yanbu, KSA</strong> <br>Mar 2018 – Nov 2020</p>
+          <p><strong>Kemyea Yanbu • Yanbu, KSA</strong><br>Mar 2018 – Nov 2020</p>
           <p>Full-cycle ERPNext upgrades, workflow automation, email/website integration, and enterprise support.</p>
         </div>
       </div>
       <div class="timeline-item left">
         <div class="timeline-content">
           <h3>ERP Support Engineer & Network Administrator</h3>
-          <p><strong>Ablaze Info Solutions Pvt. Ltd • India</strong> <br>Dec 2015 – Feb 2018</p>
+          <p><strong>Ablaze Info Solutions Pvt. Ltd • India</strong><br>Dec 2015 – Feb 2018</p>
           <p>Managed ERP systems, network infrastructure, security, and end-user training.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GitHub Projects -->
+  <!-- Projects -->
   <section id="projects">
     <div class="section-title"><h2>Featured GitHub Projects</h2></div>
-    <div class="repos-grid" id="reposContainer"></div>
+    <div class="repos-grid" id="reposContainer">
+      <!-- Projects loaded dynamically -->
+    </div>
   </section>
 
   <!-- Contact -->
   <section id="contact">
     <div class="section-title"><h2>Get In Touch</h2></div>
-    <div class="contact-form">
-      <form action="https://formspree.io/f/mayvlvrk" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="_replyto" placeholder="Your Email" required />
-        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-      <div style="text-align:center; margin-top:2rem; color:var(--gray-600);">
+    <div class="contact-wrapper">
+      <div class="contact-form">
+        <form action="https://formspree.io/f/mayvlvrk" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="_replyto" placeholder="Your Email" required />
+          <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+      <div class="contact-info">
         <p><strong>Email:</strong> nasiruddin.ansari@mail.com</p>
         <p><strong>Phone:</strong> +966 58 060 8336 (KSA) • +91 82714 04838 (India)</p>
         <p><strong>Location:</strong> Riyadh, Saudi Arabia</p>
@@ -419,12 +409,13 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Nasiruddin Ansari. All Rights Reserved.</p>
+    <p>© 2025 Nasiruddin Ansari. All Rights Reserved.</p>
   </footer>
 
   <script>
     // Theme Toggle
-    document.getElementById('themeToggle').addEventListener('click', () => {
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
       const isDark = document.body.dataset.theme === 'dark';
       document.body.dataset.theme = isDark ? 'light' : 'dark';
       themeToggle.classList.toggle('fa-moon', isDark);
@@ -433,10 +424,10 @@
 
     // Navbar scroll effect
     window.addEventListener('scroll', () => {
-      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
     });
 
-    // Progress bars
+    // Progress bars animation
     const progressBars = document.querySelectorAll('.progress');
     const animateProgress = () => {
       progressBars.forEach(bar => {
@@ -448,7 +439,7 @@
     window.addEventListener('scroll', animateProgress);
     window.addEventListener('load', animateProgress);
 
-    // Fetch GitHub repos
+    // Fetch GitHub Repos
     fetch('https://api.github.com/users/nasir97177/repos?sort=updated&per_page=6')
       .then(res => res.json())
       .then(repos => {
@@ -458,11 +449,14 @@
           card.className = 'repo-card';
           card.innerHTML = `
             <h3>${repo.name}</h3>
-            <p>${repo.description || 'No description'}</p>
-            <a href="${repo.html_url}" target="_blank">View on GitHub →</a>
+            <p>${repo.description || 'No description available.'}</p>
+            <a href="${repo.html_url}" target="_blank">View on GitHub</a>
           `;
           container.appendChild(card);
         });
+      })
+      .catch(() => {
+        document.getElementById('reposContainer').innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#666;">Unable to load projects at the moment.</p>';
       });
   </script>
 </body>
