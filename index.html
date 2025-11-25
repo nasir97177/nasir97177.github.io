@@ -24,11 +24,18 @@
     .particle { position: absolute; background: rgba(255,255,255,0.15); border-radius: 50%; animation: float 18s infinite linear; }
     @keyframes float { 0% { transform: translateY(100vh) rotate(0deg); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; } }
 
-    nav { position: fixed; top: 25px; left: 50%; transform: translateX(-50%); background: var(--glass); backdrop-filter: blur(20px); border-radius: 60px; padding: 18px 50px; z-index: 1000; border: 1px solid var(--glass-border); box-shadow: 0 20px 50px rgba(0,0,0,0.4); transition: all 0.4s; }
-    nav.scrolled { top: 15px; padding: 14px 40px; }
-    .logo { font-size: 2.1rem; font-weight: 900; background: linear-gradient(135deg, #fff, #c4b5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    nav ul { display: flex; gap: 35px; }
-    nav ul li a { color: white; font-weight: 600; padding: 12px 22px; border-radius: 30px; transition: all 0.4s; }
+    /* CENTERED NAVBAR - NAME IN MIDDLE */
+    nav {
+      position: fixed; top: 25px; left: 50%; transform: translateX(-50%);
+      background: var(--glass); backdrop-filter: blur(20px); border-radius: 60px;
+      padding: 18px 60px; z-index: 1000; border: 1px solid var(--glass-border);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4); display: flex; align-items: center; gap: 50px;
+      transition: all 0.4s;
+    }
+    nav.scrolled { top: 15px; padding: 14px 50px; }
+    .logo { font-size: 2.4rem; font-weight: 900; background: linear-gradient(135deg, #fff, #c4b5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; white-space: nowrap; }
+    nav ul { display: flex; gap: 35px; list-style: none; margin: 0; }
+    nav ul li a { color: white; font-weight: 600; padding: 12px 22px; border-radius: 30px; transition: all 0.4s; text-decoration: none; }
     nav ul li a:hover { background: rgba(255,255,255,0.25); transform: translateY(-4px); }
 
     .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
@@ -65,13 +72,24 @@
     .contact-form button { background: linear-gradient(135deg, #6366f1, #ec4899); color: white; padding: 20px 60px; border: none; border-radius: 50px; font-size: 1.3rem; font-weight: 700; cursor: pointer; transition: 0.5s; }
     .contact-form button:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(99,102,241,0.5); }
 
+    /* CONTACT INFO WITH ICONS */
+    .contact-info { text-align: center; margin-top: 60px; }
+    .contact-info p { font-size: 1.5rem; margin: 25px 0; }
+    .contact-info a { color: white; text-decoration: none; font-weight: 600; }
+    .contact-info i { margin-right: 15px; font-size: 1.8rem; vertical-align: middle; }
+    .contact-info .fa-whatsapp { color: #25D366; }
+    .contact-info .fa-phone { color: #00d4ff; }
+    .contact-info .fa-envelope { color: #ff6b6b; }
+    .contact-info .fa-map-marker-alt { color: #feca57; }
+
     footer { background: rgba(0,0,0,0.6); backdrop-filter: blur(20px); padding: 100px; text-align: center; font-size: 1.4rem; }
 
     @media (max-width: 768px) {
       .hero h1 { font-size: 3.8rem; } .hero p { font-size: 1.4rem; }
       .about { flex-direction: column; text-align: center; gap: 60px; }
       .about-img img { width: 340px; height: 340px; }
-      nav { top: 10px; padding: 15px 20px; }
+      nav { padding: 15px 20px; gap: 20px; flex-wrap: wrap; justify-content: center; }
+      .logo { font-size: 2rem; }
       .timeline::before { left: 40px; }
       .timeline-item { width: 100%; padding-left: 100px; left: 0 !important; }
       .timeline-item::after { left: 26px !important; }
@@ -83,12 +101,15 @@
   <div class="bg-animation"></div>
   <div class="particles" id="particles"></div>
 
+  <!-- CENTERED NAVBAR - NAME IN MIDDLE -->
   <nav id="navbar">
-    <div class="logo">Nasiruddin Ansari</div>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
+    </ul>
+    <div class="logo">Nasiruddin Ansari</div>
+    <ul>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -159,11 +180,10 @@
     <div class="repos-grid" id="reposContainer"></div>
   </section>
 
-  <!-- 100% WORKING CONTACT FORM + INSTANT WHATSAPP NOTIFICATION -->
+  <!-- CONTACT SECTION WITH ICONS & INSTANT WHATSAPP -->
   <section id="contact" class="animate-on-scroll">
     <h2 style="text-align:center;font-size:3.5rem;margin-bottom:70px;background:linear-gradient(135deg,#fff,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Get In Touch</h2>
     <div class="contact-form">
-      <!-- BRAND NEW & VERIFIED FORMSPREE ENDPOINT (Tested Nov 25, 2025) -->
       <form id="contactForm" action="https://formspree.io/f/mknejyva" method="POST">
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
@@ -171,31 +191,27 @@
         <button type="submit">Send Message → Instant Reply</button>
       </form>
 
-      <!-- INSTANT WHATSAPP NOTIFICATION TO +966 58 060 8336 -->
+      <!-- INSTANT WHATSAPP NOTIFICATION -->
       <script>
         document.getElementById('contactForm').addEventListener('submit', function(e) {
           if (this.querySelector('button').disabled) return;
           this.querySelector('button').disabled = true;
           this.querySelector('button').textContent = 'Sending...';
-
           const name = this.name.value.trim();
           const email = this.email.value.trim();
           const message = this.message.value.trim();
-
           const whatsappText = `NEW PORTFOLIO MESSAGE!\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\nTime: ${new Date().toLocaleString()}`;
           const whatsappURL = `https://api.whatsapp.com/send?phone=966580608336&text=${encodeURIComponent(whatsappText)}`;
-
           setTimeout(() => window.open(whatsappURL, '_blank'), 1000);
         });
       </script>
 
-      <div style="text-align:center;margin-top:50px;font-size:1.4rem;opacity:0.9;">
-        <p>Or contact me directly on WhatsApp →  
-          <a href="https://wa.me/966580608336" target="_blank" style="color:#25D366;font-weight:800;">
-            <i class="fab fa-whatsapp"></i> +966 58 060 8336 (Instant Reply)
-          </a>
-        </p>
-        <p>Email: nasiruddin.ansari@mail.com • Riyadh, Saudi Arabia</p>
+      <!-- CONTACT INFO WITH BEAUTIFUL ICONS -->
+      <div class="contact-info">
+        <p><i class="fab fa-whatsapp"></i><a href="https://wa.me/966580608336" target="_blank">+966 58 060 8336 (WhatsApp)</a></p>
+        <p><i class="fas fa-phone"></i>+966 58 060 8336 • +91 82714 04838</p>
+        <p><i class="fas fa-envelope"></i>nasiruddin.ansari@mail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i>Riyadh, Saudi Arabia</p>
       </div>
     </div>
   </section>
@@ -203,7 +219,7 @@
   <footer>© 2025 Nasiruddin Ansari — Built with Passion & Precision</footer>
 
   <script>
-    // Floating Particles
+    // Particles
     for(let i=0;i<60;i++){
       let p=document.createElement('div'); p.className='particle';
       p.style.width=p.style.height=Math.random()*10+3+'px';
@@ -213,7 +229,7 @@
       document.getElementById('particles').appendChild(p);
     }
 
-    // Scroll Animations & Progress Bars
+    // Animations & Progress
     const observer = new IntersectionObserver(e=>e.forEach(en=>en.isIntersecting&&en.target.classList.add('animated')),{threshold:0.15});
     document.querySelectorAll('.animate-on-scroll').forEach(el=>observer.observe(el));
     window.addEventListener('scroll',()=>{
@@ -225,7 +241,7 @@
       });
     });
 
-    // Load GitHub Projects
+    // GitHub Projects
     fetch('https://api.github.com/users/nasir97177/repos?sort=updated&per_page=6')
       .then(r=>r.json())
       .then(repos=>{
@@ -237,7 +253,7 @@
         });
       });
 
-    // Smooth Scrolling
+    // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click',e=>{
         e.preventDefault();
