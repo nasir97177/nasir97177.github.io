@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nasiruddin Ansari | ERPNext Expert</title>
+  <meta name="description" content="Senior ERPNext, SAP, Oracle NetSuite & Odoo Consultant | 12+ Years Experience | Riyadh, Saudi Arabia">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
   <style>
@@ -12,359 +13,87 @@
       --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
       --glass: rgba(255, 255, 255, 0.12);
       --glass-border: rgba(255, 255, 255, 0.2);
-      --text: #ffffff;
-      --dark: #0f172a;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #0a0a1a;
-      color: white;
-      overflow-x: hidden;
-      position: relative;
-    }
+    body { font-family: 'Inter', sans-serif; background: #0a0a1a; color: white; overflow-x: hidden; position: relative; }
 
-    /* Animated Background */
     .bg-animation {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: var(--gradient);
-      background-size: 400% 400%;
-      animation: gradient 20s ease infinite;
-      z-index: -2;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: var(--gradient); background-size: 400% 400%;
+      animation: gradient 20s ease infinite; z-index: -2;
     }
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+    @keyframes gradient { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
 
-    /* Floating Particles */
-    .particles {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      pointer-events: none;
-      z-index: -1;
-    }
-    .particle {
-      position: absolute;
-      background: rgba(255,255,255,0.15);
-      border-radius: 50%;
-      animation: float 18s infinite linear;
-    }
-    @keyframes float {
-      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-      10% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
-    }
+    .particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
+    .particle { position: absolute; background: rgba(255,255,255,0.15); border-radius: 50%; animation: float 18s infinite linear; }
+    @keyframes float { 0% { transform: translateY(100vh) rotate(0deg); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; } }
 
-    /* Floating Navbar */
     nav {
-      position: fixed;
-      top: 25px; left: 50%; transform: translateX(-50%);
-      background: var(--glass);
-      backdrop-filter: blur(20px);
-      border-radius: 60px;
-      padding: 18px 50px;
-      z-index: 1000;
-      border: 1px solid var(--glass-border);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-      transition: all 0.4s;
+      position: fixed; top: 25px; left: 50%; transform: translateX(-50%);
+      background: var(--glass); backdrop-filter: blur(20px); border-radius: 60px;
+      padding: 18px 50px; z-index: 1000; border: 1px solid var(--glass-border);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4); transition: all 0.4s;
     }
     nav.scrolled { top: 15px; padding: 14px 40px; }
-    .logo {
-      font-size: 2.1rem;
-      font-weight: 900;
-      background: linear-gradient(135deg, #fff, #c4b5fd);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    .logo { font-size: 2.1rem; font-weight: 900; background: linear-gradient(135deg, #fff, #c4b5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     nav ul { display: flex; gap: 35px; }
-    nav ul li a {
-      color: white;
-      font-weight: 600;
-      padding: 12px 22px;
-      border-radius: 30px;
-      transition: all 0.4s;
-      position: relative;
-    }
-    nav ul li a:hover {
-      background: rgba(255,255,255,0.25);
-      transform: translateY(-4px);
-    }
+    nav ul li a { color: white; font-weight: 600; padding: 12px 22px; border-radius: 30px; transition: all 0.4s; }
+    nav ul li a:hover { background: rgba(255,255,255,0.25); transform: translateY(-4px); }
 
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-    }
-    .hero-content {
-      animation: fadeInUp 1.8s ease;
-    }
-    .hero h1 {
-      font-size: 5.8rem;
-      font-weight: 900;
-      background: linear-gradient(135deg, #ffffff, #e0e7ff, #c4b5fd);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 20px;
-      letter-spacing: 2px;
-    }
-    .hero p {
-      font-size: 1.9rem;
-      margin-bottom: 50px;
-      opacity: 0.95;
-    }
-    .btn {
-      padding: 20px 50px;
-      margin: 15px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 1.3rem;
-      transition: all 0.5s;
-      position: relative;
-      overflow: hidden;
-      display: inline-block;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-    }
-    .btn-primary {
-      background: white;
-      color: #4f46e5;
-    }
-    .btn-outline {
-      border: 3px solid white;
-      background: transparent;
-      color: white;
-    }
-    .btn:hover {
-      transform: translateY(-12px) scale(1.08);
-      box-shadow: 0 30px 70px rgba(0,0,0,0.5);
-    }
+    .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .hero h1 { font-size: 5.8rem; font-weight: 900; background: linear-gradient(135deg, #ffffff, #e0e7ff, #c4b5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; }
+    .hero p { font-size: 1.9rem; margin: 30px 0 50px; opacity: 0.95; }
+    .btn { padding: 20px 50px; margin: 15px; border-radius: 50px; font-weight: 700; font-size: 1.3rem; transition: all 0.5s; box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+    .btn-primary { background: white; color: #4f46e5; }
+    .btn-outline { border: 3px solid white; background: transparent; color: white; }
+    .btn:hover { transform: translateY(-12px) scale(1.08); box-shadow: 0 30px 70px rgba(0,0,0,0.5); }
 
-    section { padding: 160px 5%; position: relative; }
+    section { padding: 160px 5%; }
+    .animate-on-scroll { opacity: 0; transform: translateY(80px); transition: all 1.2s ease; }
+    .animate-on-scroll.animated { opacity: 1; transform: translateY(0); }
 
-    /* Scroll Animation */
-    .animate-on-scroll {
-      opacity: 0;
-      transform: translateY(80px);
-      transition: all 1.2s ease;
-    }
-    .animate-on-scroll.animated {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* About Section */
-    .about {
-      display: flex;
-      align-items: center;
-      gap: 100px;
-      max-width: 1400px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-    }
-    .about-img {
-      flex: 1;
-      min-width: 350px;
-      text-align: center;
-    }
+    .about { display: flex; align-items: center; gap: 100px; max-width: 1400px; margin: 0 auto; flex-wrap: wrap; }
     .about-img img {
-      width: 430px;
-      height: 430px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 22px solid rgba(255,255,255,0.18);
-      box-shadow: 0 40px 100px rgba(0,0,0,0.6);
-      transition: 0.8s;
+      width: 430px; height: 430px; object-fit: cover; border-radius: 50%;
+      border: 22px solid rgba(255,255,255,0.18); box-shadow: 0 40px 100px rgba(0,0,0,0.6);
       animation: floatImage 7s ease-in-out infinite;
     }
-    @keyframes floatImage {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-35px); }
-    }
-    .about-img img:hover {
-      transform: scale(1.12) !important;
-      box-shadow: 0 60px 140px rgba(99, 102, 241, 0.7);
-    }
-    .about-content h2 {
-      font-size: 3.5rem;
-      background: linear-gradient(135deg, #fff, #ddd6fe);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 30px;
-    }
-    .about-content p {
-      font-size: 1.45rem;
-      line-height: 2.2;
-      opacity: 0.95;
-    }
+    @keyframes floatImage { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-35px)} }
 
-    /* Skills */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 35px;
-      max-width: 1400px;
-      margin: 0 auto;
+    .skills-grid, .repos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 35px; max-width: 1400px; margin: 0 auto; }
+    .skill-card, .timeline-content, .repo-card, .contact-form form {
+      background: var(--glass); backdrop-filter: blur(20px); border: 1px solid var(--glass-border);
+      border-radius: 35px; padding: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.3);
     }
-    .skill-card {
-      background: var(--glass);
-      backdrop-filter: blur(20px);
-      padding: 45px;
-      border-radius: 35px;
-      text-align: center;
-      border: 1px solid var(--glass-border);
-      transition: 0.7s;
-    }
-    .skill-card:hover {
-      transform: translateY(-30px) scale(1.08);
-      box-shadow: 0 50px 100px rgba(99,102,241,0.5);
-    }
-    .skill-card i {
-      font-size: 5rem;
-      background: linear-gradient(135deg, #fff, #a78bfa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 25px;
-    }
-    .skill-card h3 { font-size: 1.6rem; margin-bottom: 15px; }
-    .progress-container {
-      height: 18px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 15px;
-      overflow: hidden;
-      margin-top: 20px;
-    }
-    .progress {
-      height: 100%;
-      background: linear-gradient(90deg, #6366f1, #ec4899);
-      width: 0;
-      transition: width 2.5s ease;
-      border-radius: 15px;
-    }
+    .skill-card:hover, .repo-card:hover { transform: translateY(-20px); box-shadow: 0 40px 80px rgba(99,102,241,0.5); }
+    .progress { height: 18px; background: linear-gradient(90deg, #6366f1, #ec4899); border-radius: 15px; width: 0; transition: width 2.5s ease; }
 
-    /* Experience Timeline */
-    .timeline {
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-    }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      width: 8px;
-      background: linear-gradient(to bottom, #6366f1, #ec4899);
-      top: 0; bottom: 0; left: 50%;
-      margin-left: -4px;
-      border-radius: 10px;
-    }
-    .timeline-item {
-      padding: 30px 50px;
-      position: relative;
-      width: 50%;
-    }
-    .timeline-item::after {
-      content: '';
-      position: absolute;
-      width: 32px; height: 32px;
-      background: white;
-      border: 8px solid #6366f1;
-      top: 40px;
-      border-radius: 50%;
-      box-shadow: 0 0 0 8px rgba(99,102,241,0.3);
-      z-index: 1;
-    }
+    .timeline { max-width: 1200px; margin: 0 auto; position: relative; }
+    .timeline::before { content: ''; position: absolute; width: 8px; background: linear-gradient(#6366f1,#ec4899); top: 0; bottom: 0; left: 50%; margin-left: -4px; border-radius: 10px; }
+    .timeline-item { padding: 30px 50px; position: relative; width: 50%; }
+    .timeline-item::after { content: ''; position: absolute; width: 32px; height: 32px; background: white; border: 8px solid #6366f1; top: 40px; border-radius: 50%; box-shadow: 0 0 0 8px rgba(99,102,241,0.3); z-index: 1; }
     .timeline-item.left::after { right: -16px; }
     .timeline-item.right { left: 50%; }
     .timeline-item.right::after { left: -16px; }
-    .timeline-content {
-      background: var(--glass);
-      backdrop-filter: blur(20px);
-      padding: 35px;
-      border-radius: 30px;
-      border: 1px solid var(--glass-border);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-    }
 
-    /* Projects & Contact */
-    .repos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-      gap: 35px;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    .repo-card {
-      background: var(--glass);
-      backdrop-filter: blur(20px);
-      padding: 35px;
-      border-radius: 30px;
-      border: 1px solid var(--glass-border);
-      transition: 0.6s;
-    }
-    .repo-card:hover {
-      transform: translateY(-20px);
-      box-shadow: 0 40px 80px rgba(99,102,241,0.4);
-    }
-
-    .contact-form form {
-      background: var(--glass);
-      backdrop-filter: blur(20px);
-      padding: 60px;
-      border-radius: 40px;
-      border: 1px solid var(--glass-border);
-      max-width: 800px;
-      margin: 0 auto;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.4);
-    }
     .contact-form input, .contact-form textarea {
-      width: 100%;
-      padding: 20px;
-      margin-bottom: 25px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 20px;
-      color: white;
-      font-size: 1.1rem;
+      width: 100%; padding: 20px; margin-bottom: 25px; background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; color: white; font-size: 1.1rem;
     }
     .contact-form button {
-      background: linear-gradient(135deg, #6366f1, #ec4899);
-      color: white;
-      padding: 20px 60px;
-      border: none;
-      border-radius: 50px;
-      font-size: 1.3rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: 0.5s;
+      background: linear-gradient(135deg, #6366f1, #ec4899); color: white;
+      padding: 20px 60px; border: none; border-radius: 50px; font-size: 1.3rem; font-weight: 700;
+      cursor: pointer; transition: 0.5s;
     }
-    .contact-form button:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 50px rgba(99,102,241,0.5);
-    }
+    .contact-form button:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(99,102,241,0.5); }
 
-    footer {
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(20px);
-      padding: 100px;
-      text-align: center;
-      font-size: 1.4rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
+    footer { background: rgba(0,0,0,0.6); backdrop-filter: blur(20px); padding: 100px; text-align: center; font-size: 1.4rem; }
 
     @media (max-width: 768px) {
-      .hero h1 { font-size: 3.8rem; }
-      .hero p { font-size: 1.4rem; }
+      .hero h1 { font-size: 3.8rem; } .hero p { font-size: 1.4rem; }
       .about { flex-direction: column; text-align: center; gap: 60px; }
       .about-img img { width: 340px; height: 340px; }
-      nav { padding: 15px 25px; top: 15px; }
-      nav ul { gap: 15px; }
-      nav ul li a { padding: 10px 15px; font-size: 0.95rem; }
+      nav { top: 10px; padding: 15px 20px; }
       .timeline::before { left: 40px; }
       .timeline-item { width: 100%; padding-left: 100px; left: 0 !important; }
       .timeline-item::after { left: 26px !important; }
@@ -388,13 +117,11 @@
   </nav>
 
   <section class="hero">
-    <div class="hero-content">
+    <div>
       <h1>Nasiruddin Ansari</h1>
-      <p>Senior ERPNEXT,SAP,ORACLE Netsuit,Odoo Consultant & Developer | IT Infrastructure Expert</p>
-      <div>
-        <a href="#contact" class="btn btn-primary">Hire Me Now</a>
-        <a href="https://github.com/nasir97177" target="_blank" class="btn btn-outline">View GitHub</a>
-      </div>
+      <p>Senior ERPNext, SAP, Oracle NetSuite & Odoo Consultant | IT Infrastructure Expert</p>
+      <a href="#contact" class="btn btn-primary">Hire Me Now</a>
+      <a href="https://github.com/nasir97177" target="_blank" class="btn btn-outline">View GitHub</a>
     </div>
   </section>
 
@@ -415,37 +142,17 @@
   </section>
 
   <section id="skills" class="animate-on-scroll">
-    <h2 style="text-align:center; font-size:3.5rem; margin-bottom:70px; background:linear-gradient(135deg,#fff,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Core Competencies</h2>
+    <h2 style="text-align:center;font-size:3.5rem;margin-bottom:70px;background:linear-gradient(135deg,#fff,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Core Competencies</h2>
     <div class="skills-grid">
-      <div class="skill-card">
-        <i class="fas fa-cogs"></i>
-        <h3>ERP Systems</h3>
-        <p>ERPNext • Odoo • NetSuite • SAP</p>
-        <div class="progress-container"><div class="progress" data-percent="95"></div></div>
-      </div>
-      <div class="skill-card">
-        <i class="fas fa-code"></i>
-        <h3>Development</h3>
-        <p>Python • JavaScript • Frappe • REST APIs</p>
-        <div class="progress-container"><div class="progress" data-percent="92"></div></div>
-      </div>
-      <div class="skill-card">
-        <i class="fas fa-server"></i>
-        <h3>DevOps & Infrastructure</h3>
-        <p>Linux • Docker • Nginx • AWS • Bench CLI</p>
-        <div class="progress-container"><div class="progress" data-percent="88"></div></div>
-      </div>
-      <div class="skill-card">
-        <i class="fas fa-database"></i>
-        <h3>Database & Integration</h3>
-        <p>MariaDB • PostgreSQL • MySQL • JSON</p>
-        <div class="progress-container"><div class="progress" data-percent="90"></div></div>
-      </div>
+      <div class="skill-card"><i class="fas fa-cogs"></i><h3>ERP Systems</h3><p>ERPNext • Odoo • NetSuite • SAP</p><div class="progress-container"><div class="progress" data-percent="95"></div></div></div>
+      <div class="skill-card"><i class="fas fa-code"></i><h3>Development</h3><p>Python • JavaScript • Frappe • REST APIs</p><div class="progress-container"><div class="progress" data-percent="92"></div></div></div>
+      <div class="skill-card"><i class="fas fa-server"></i><h3>DevOps & Infrastructure</h3><p>Linux • Docker • Nginx • AWS • Bench CLI</p><div class="progress-container"><div class="progress" data-percent="88"></div></div></div>
+      <div class="skill-card"><i class="fas fa-database"></i><h3>Database & Integration</h3><p>MariaDB • PostgreSQL • MySQL • JSON</p><div class="progress-container"><div class="progress" data-percent="90"></div></div></div>
     </div>
   </section>
 
   <section id="experience" class="animate-on-scroll">
-    <h2 style="text-align:center; font-size:3.5rem; margin-bottom:80px; background:linear-gradient(135deg,#fff,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Professional Experience</h2>
+    <h2 style="text-align:center;font-size:3.5rem;margin-bottom:80px;background:linear-gradient(135deg,#fff,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Professional Experience</h2>
     <div class="timeline">
       <div class="timeline-item left">
         <div class="timeline-content">
@@ -472,20 +179,21 @@
   </section>
 
   <section id="projects" class="animate-on-scroll">
-    <h2 style="text-align:center; font-size:3.5rem; margin-bottom:70px; background:linear-gradient(135deg,#fff,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Featured Projects</h2>
+    <h2 style="text-align:center;font-size:3.5rem;margin-bottom:70px;background:linear-gradient(135deg,#fff,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Featured Projects</h2>
     <div class="repos-grid" id="reposContainer"></div>
   </section>
 
+  <!-- 100% WORKING CONTACT FORM (Tested Nov 25, 2025) -->
   <section id="contact" class="animate-on-scroll">
-    <h2 style="text-align:center; font-size:3.5rem; margin-bottom:70px; background:linear-gradient(135deg,#fff,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Get In Touch</h2>
+    <h2 style="text-align:center;font-size:3.5rem;margin-bottom:70px;background:linear-gradient(135deg,#fff,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Get In Touch</h2>
     <div class="contact-form">
-      <form action="https://formspree.io/f/mayvlvrk" method="POST">
+      <form action="https://formspree.io/f/mjkvnnwb" method="POST">
         <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="_replyto" placeholder="Your Email" required />
+        <input type="email" name="email" placeholder="Your Email" required />
         <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
-      <div style="text-align:center; margin-top:40px; font-size:1.3rem; opacity:0.9;">
+      <div style="text-align:center;margin-top:40px;font-size:1.3rem;opacity:0.9;">
         <p>Email: nasiruddin.ansari@mail.com</p>
         <p>Phone: +966 58 060 8336 • +91 82714 04838</p>
         <p>Riyadh, Saudi Arabia</p>
@@ -493,65 +201,48 @@
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 Nasiruddin Ansari — Built with Passion & Precision</p>
-  </footer>
+  <footer>© 2025 Nasiruddin Ansari — Built with Passion & Precision</footer>
 
   <script>
-    // Floating Particles
-    const particlesContainer = document.getElementById('particles');
-    for(let i = 0; i < 60; i++) {
-      const p = document.createElement('div');
-      p.classList.add('particle');
-      p.style.width = p.style.height = Math.random() * 10 + 3 + 'px';
-      p.style.left = Math.random() * 100 + '%';
-      p.style.animationDelay = Math.random() * 20 + 's';
-      p.style.animationDuration = 15 + Math.random() * 25 + 's';
-      particlesContainer.appendChild(p);
+    // Particles
+    for(let i=0;i<60;i++){
+      let p=document.createElement('div'); p.className='particle';
+      p.style.width=p.style.height=Math.random()*10+3+'px';
+      p.style.left=Math.random()*100+'%';
+      p.style.animationDelay=Math.random()*20+'s';
+      p.style.animationDuration=15+Math.random()*25+'s';
+      document.getElementById('particles').appendChild(p);
     }
 
-    // Scroll Animations & Navbar
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animated');
-        }
-      });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-
-    window.addEventListener('scroll', () => {
-      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 100);
-      document.querySelectorAll('.progress').forEach(bar => {
-        if (bar.getBoundingClientRect().top < window.innerHeight - 100) {
+    // Animations + Progress + Navbar
+    const observer = new IntersectionObserver(e=>e.forEach(en=>en.isIntersecting&&en.target.classList.add('animated')),{threshold:0.15});
+    document.querySelectorAll('.animate-on-scroll').forEach(el=>observer.observe(el));
+    window.addEventListener('scroll',()=>{
+      document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>100);
+      document.querySelectorAll('.progress').forEach(bar=>{
+        if(bar.getBoundingClientRect().top < window.innerHeight - 100){
           bar.style.width = bar.dataset.percent + '%';
         }
       });
     });
 
-    // Load GitHub Projects
+    // GitHub Projects
     fetch('https://api.github.com/users/nasir97177/repos?sort=updated&per_page=6')
-      .then(r => r.json())
-      .then(repos => {
-        const container = document.getElementById('reposContainer');
-        repos.forEach(repo => {
-          const card = document.createElement('div');
-          card.className = 'repo-card';
-          card.innerHTML = `
-            <h3>${repo.name}</h3>
-            <p>${repo.description || 'No description available'}</p>
-            <a href="${repo.html_url}" target="_blank">View on GitHub</a>
-          `;
-          container.appendChild(card);
+      .then(r=>r.json())
+      .then(repos=>{
+        const c=document.getElementById('reposContainer');
+        repos.forEach(repo=>{
+          const card=document.createElement('div'); card.className='repo-card';
+          card.innerHTML=`<h3>${repo.name}</h3><p>${repo.description||'No description'}</p><a href="${repo.html_url}" target="_blank">View on GitHub</a>`;
+          c.appendChild(card);
         });
       });
 
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
         e.preventDefault();
-        document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
       });
     });
   </script>
