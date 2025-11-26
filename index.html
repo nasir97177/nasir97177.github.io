@@ -3,155 +3,238 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nasiruddin Ansari | ERPNext Expert Riyadh</title>
-  <meta name="description" content="Senior ERPNext Consultant | 12+ Years Experience | Riyadh, Saudi Arabia">
-  
-  <!-- Critical CSS Inlined (Zero Render Blocking) -->
+  <title>Nasiruddin Ansari | ERPNext Expert</title>
+  <meta name="description" content="Senior ERPNext, SAP, Oracle NetSuite & Odoo Consultant | 12+ Years Experience | Riyadh, Saudi Arabia">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
   <style>
-    :root{--primary:#6366f1;--glass:rgba(255,255,255,0.1);--border:rgba(255,255,255,0.15)}
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Inter',sans-serif;background:#0a0a1a;color:#fff;overflow-x:hidden;position:relative;line-height:1.6}
-    .bg{position:fixed;inset:0;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);z-index:-2}
-    .overlay{position:fixed;inset:0;background:radial-gradient(circle at 50% 50%,rgba(99,102,241,0.15),transparent 70%);z-index:-1;animation:pulse 20s infinite}
-    @keyframes pulse{0%,100%{opacity:0.4}50%{opacity:0.7}}
-    
-    nav{position:fixed;top:20px;left:50%;transform:translateX(-50%);background:var(--glass);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:60px;padding:14px 50px;z-index:1000;box-shadow:0 10px 30px rgba(0,0,0,0.5);display:flex;align-items:center;gap:40px;transition:all .3s}
-    nav.scrolled{top:10px;padding:12px 40px}
-    .logo{font-size:2rem;font-weight:900;background:linear-gradient(135deg,#fff,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    nav ul{display:flex;gap:28px;list-style:none}
-    nav a{color:#fff;text-decoration:none;font-weight:600;padding:10px 18px;border-radius:25px;transition:.3s}
-    nav a:hover{background:rgba(255,255,255,0.2);transform:translateY(-2px)}
-    
-    .hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 20px}
-    .hero h1{font-size:5.5rem;font-weight:900;background:linear-gradient(135deg,#fff,#e0e7ff,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:16px}
-    .hero p{font-size:1.8rem;opacity:0.9;margin:24px 0 40px}
-    .btn{display:inline-block;padding:18px 44px;margin:10px;border-radius:50px;font-weight:700;font-size:1.2rem;text-decoration:none;transition:.4s;box-shadow:0 10px 30px rgba(0,0,0,0.4)}
-    .btn-primary{background:#fff;color:#4f46e5}
-    .btn-outline{border:2px solid #fff;color:#fff}
-    .btn:hover{transform:translateY(-8px) scale(1.05);box-shadow:0 20px 50px rgba(0,0,0,0.6)}
-    
-    section{padding:120px 5%}
-    h2{text-align:center;font-size:3.2rem;margin-bottom:60px;background:linear-gradient(135deg,#fff,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    .about{display:flex;align-items:center;gap:80px;max-width:1300px;margin:0 auto;flex-wrap:wrap}
-    .about-img img{width:380px;height:380px;object-fit:cover;border-radius:50%;border:18px solid rgba(255,255,255,0.15);box-shadow:0 30px 80px rgba(0,0,0,0.6);transition:.5s}
-    .progress{height:12px;background:rgba(255,255,255,0.1);border-radius:10px;overflow:hidden;margin-top:16px}
-    .bar{height:100%;background:linear-gradient(90deg,#6366f1,#ec4899);width:0;transition:width 2s ease;border-radius:10px}
-    
-    @media(max-width:768px){
-      .hero h1{font-size:3.6rem}.hero p{font-size:1.4rem}
-      nav{padding:12px 20px;gap:16px;flex-wrap:wrap;justify-content:center}
-      .logo{font-size:1.8rem}
-      .about{flex-direction:column;text-align:center;gap:50px}
-      .about-img img{width:300px;height:300px}
+    :root {
+      --primary: #6366f1;
+      --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+      --glass: rgba(255, 255, 255, 0.12);
+      --glass-border: rgba(255, 255, 255, 0.2);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #0a0a1a; color: white; overflow-x: hidden; position: relative; }
+    .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--gradient); background-size: 400% 400%; animation: gradient 20s ease infinite; z-index: -2; }
+    @keyframes gradient { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+    .particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
+    .particle { position: absolute; background: rgba(255,255,255,0.15); border-radius: 50%; animation: float 18s infinite linear; }
+    @keyframes float { 0% { transform: translateY(100vh) rotate(0deg); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; } }
+    /* CENTERED NAVBAR - NAME IN MIDDLE */
+    nav {
+      position: fixed; top: 25px; left: 50%; transform: translateX(-50%);
+      background: var(--glass); backdrop-filter: blur(20px); border-radius: 60px;
+      padding: 18px 60px; z-index: 1000; border: 1px solid var(--glass-border);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4); display: flex; align-items: center; gap: 50px;
+      transition: all 0.4s;
+    }
+    nav.scrolled { top: 15px; padding: 14px 50px; }
+    .logo { font-size: 2.4rem; font-weight: 900; background: linear-gradient(135deg, #fff, #c4b5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; white-space: nowrap; }
+    nav ul { display: flex; gap: 35px; list-style: none; margin: 0; }
+    nav ul li a { color: white; font-weight: 600; padding: 12px 22px; border-radius: 30px; transition: all 0.4s; text-decoration: none; }
+    nav ul li a:hover { background: rgba(255,255,255,0.25); transform: translateY(-4px); }
+    .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .hero h1 { font-size: 5.8rem; font-weight: 900; background: linear-gradient(135deg, #ffffff, #e0e7ff, #c4b5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; }
+    .hero p { font-size: 1.9rem; margin: 30px 0 50px; opacity: 0.95; }
+    .btn { padding: 20px 50px; margin: 15px; border-radius: 50px; font-weight: 700; font-size: 1.3rem; transition: all 0.5s; box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+    .btn-primary { background: white; color: #4f46e5; }
+    .btn-outline { border: 3px solid white; background: transparent; color: white; }
+    .btn:hover { transform: translateY(-12px) scale(1.08); box-shadow: 0 30px 70px rgba(0,0,0,0.5); }
+    section { padding: 160px 5%; }
+    .animate-on-scroll { opacity: 0; transform: translateY(80px); transition: all 1.2s ease; }
+    .animate-on-scroll.animated { opacity: 1; transform: translateY(0); }
+    .about { display: flex; align-items: center; gap: 100px; max-width: 1400px; margin: 0 auto; flex-wrap: wrap; }
+    .about-img img { width: 430px; height: 430px; object-fit: cover; border-radius: 50%; border: 22px solid rgba(255,255,255,0.18); box-shadow: 0 40px 100px rgba(0,0,0,0.6); animation: floatImage 7s ease-in-out infinite; }
+    @keyframes floatImage { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-35px)} }
+    .skills-grid, .repos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 35px; max-width: 1400px; margin: 0 auto; }
+    .skill-card, .timeline-content, .repo-card, .contact-form form { background: var(--glass); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 35px; padding: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+    .skill-card:hover, .repo-card:hover { transform: translateY(-20px); box-shadow: 0 40px 80px rgba(99,102,241,0.5); }
+    .progress-container { height: 18px; background: rgba(255,255,255,0.1); border-radius: 15px; overflow: hidden; margin-top: 20px; }
+    .progress { height: 100%; background: linear-gradient(90deg, #6366f1, #ec4899); width: 0; transition: width 2.5s ease; border-radius: 15px; }
+    .timeline { max-width: 1200px; margin: 0 auto; position: relative; }
+    .timeline::before { content: ''; position: absolute; width: 8px; background: linear-gradient(#6366f1,#ec4899); top: 0; bottom: 0; left: 50%; margin-left: -4px; border-radius: 10px; }
+    .timeline-item { padding: 30px 50px; position: relative; width: 50%; }
+    .timeline-item::after { content: ''; position: absolute; width: 32px; height: 32px; background: white; border: 8px solid #6366f1; top: 40px; border-radius: 50%; box-shadow: 0 0 0 8px rgba(99,102,241,0.3); z-index: 1; }
+    .timeline-item.left::after { right: -16px; }
+    .timeline-item.right { left: 50%; }
+    .timeline-item.right::after { left: -16px; }
+    .contact-form input, .contact-form textarea { width: 100%; padding: 20px; margin-bottom: 25px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; color: white; font-size: 1.1rem; }
+    .contact-form button { background: linear-gradient(135deg, #6366f1, #ec4899); color: white; padding: 20px 60px; border: none; border-radius: 50px; font-size: 1.3rem; font-weight: 700; cursor: pointer; transition: 0.5s; }
+    .contact-form button:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(99,102,241,0.5); }
+    /* CONTACT INFO WITH ICONS */
+    .contact-info { text-align: center; margin-top: 60px; }
+    .contact-info p { font-size: 1.5rem; margin: 25px 0; }
+    .contact-info a { color: white; text-decoration: none; font-weight: 600; }
+    .contact-info i { margin-right: 15px; font-size: 1.8rem; vertical-align: middle; }
+    .contact-info .fa-whatsapp { color: #25D366; }
+    .contact-info .fa-phone { color: #00d4ff; }
+    .contact-info .fa-envelope { color: #ff6b6b; }
+    .contact-info .fa-map-marker-alt { color: #feca57; }
+    footer { background: rgba(0,0,0,0.6); backdrop-filter: blur(20px); padding: 100px; text-align: center; font-size: 1.4rem; }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 3.8rem; } .hero p { font-size: 1.4rem; }
+      .about { flex-direction: column; text-align: center; gap: 60px; }
+      .about-img img { width: 340px; height: 340px; }
+      nav { padding: 15px 20px; gap: 20px; flex-wrap: wrap; justify-content: center; }
+      .logo { font-size: 2rem; }
+      .timeline::before { left: 40px; }
+      .timeline-item { width: 100%; padding-left: 100px; left: 0 !important; }
+      .timeline-item::after { left: 26px !important; }
     }
   </style>
-
-  <!-- Preload Critical Resources -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://drive.google.com/uc?export=view&id=14rwV-YwjH5bvZ-iAAPpSzVtNNFMcozWX" as="image">
-
-  <!-- Font Awesome (async) -->
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
-  <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-  </noscript>
 </head>
 <body>
-  <div class="bg"></div>
-  <div class="overlay"></div>
-
+  <div class="bg-animation"></div>
+  <div class="particles" id="particles"></div>
+  <!-- CENTERED NAVBAR - NAME IN MIDDLE -->
   <nav id="navbar">
-    <ul><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li></ul>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+    </ul>
     <div class="logo">Nasiruddin Ansari</div>
-    <ul><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
-
   <section class="hero">
     <div>
       <h1>Nasiruddin Ansari</h1>
-      <p>Senior ERPNext Consultant • 12+ Years • Riyadh, KSA</p>
+      <p>Senior ERPNext, SAP, Oracle NetSuite & Odoo Consultant | IT Infrastructure Expert</p>
       <a href="#contact" class="btn btn-primary">Hire Me Now</a>
-      <a href="https://github.com/nasir97177" target="_blank" class="btn btn-outline">GitHub Profile</a>
+      <a href="https://github.com/nasir97177" target="_blank" class="btn btn-outline">View GitHub</a>
     </div>
   </section>
-
-  <section id="about">
+  <section id="about" class="animate-on-scroll">
     <div class="about">
       <div class="about-img">
-        <img src="https://drive.google.com/uc?export=view&id=14rwV-YwjH5bvZ-iAAPpSzVtNNFMcozWX"
-             srcset="https://drive.google.com/uc?export=view&id=14rwV-YwjH5bvZ-iAAPpSzVtNNFMcozWX 1x"
-             alt="Nasiruddin Ansari - ERPNext Expert Riyadh"
-             loading="lazy" decoding="async">
+        <img src="https://i.ibb.co/0jZ7s0Q/nasiruddin-ansari-photo.jpg" onerror="this.src='https://files.catbox.moe/4y5t5k.jpg'" alt="Nasiruddin Ansari">
       </div>
-      <div>
-        <h2>About Me</h2>
-        <p>Master of Computer Applications (MCA) with <strong>12+ years</strong> of expertise in ERPNext, Odoo, SAP, and Oracle NetSuite implementations.</p>
-        <p>Specialized in custom modules, ZATCA-compliant e-invoicing, workflow automation, cloud infrastructure, and API integrations.</p>
-        <p>Currently based in <strong>Riyadh, Saudi Arabia</strong> — helping businesses go digital across the Middle East.</p>
+      <div class="about-content">
+        <u><h2>About Me</h2> </u>
+        <p>Master of Computer Applications (MCA) with <strong>12+ years</strong> of proven expertise in ERPNext, SAP, Odoo, Oracle NetSuite implementations.</p>
+        <p>Specialized in custom module development, workflow automation, cloud infrastructure, API integrations, and enterprise-grade IT solutions.</p>
+        <p>Currently based in <strong>Riyadh, Saudi Arabia</strong> — delivering scalable business solutions across the Middle East.</p>
       </div>
     </div>
   </section>
-
-  <section id="skills">
-    <h2>Core Skills</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;max-width:1200px;margin:0 auto">
-      <div style="background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:25px;padding:30px">
-        <h3>ERP Systems</h3><p>ERPNext • Odoo • NetSuite • SAP</p>
-        <div class="progress"><div class="bar" data-pct="95"></div></div>
+  <section id="skills" class="animate-on-scroll">
+    <h2 style="text-align:center;font-size:3.5rem;margin-bottom:70px;background:linear-gradient(135deg,#fff,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Core Competencies</h2>
+    <div class="skills-grid">
+      <div class="skill-card"><i class="fas fa-cogs"></i><h3>ERP Systems</h3><p>ERPNext • Odoo • NetSuite • SAP</p><div class="progress-container"><div class="progress" data-percent="95"></div></div></div>
+      <div class="skill-card"><i class="fas fa-code"></i><h3>Development</h3><p>Python • JavaScript • Frappe • REST APIs</p><div class="progress-container"><div class="progress" data-percent="92"></div></div></div>
+      <div class="skill-card"><i class="fas fa-server"></i><h3>DevOps & Infrastructure</h3><p>Linux • Docker • Nginx • AWS • Bench CLI</p><div class="progress-container"><div class="progress" data-percent="88"></div></div></div>
+      <div class="skill-card"><i class="fas fa-database"></i><h3>Database & Integration</h3><p>MariaDB • PostgreSQL • MySQL • JSON</p><div class="progress-container"><div class="progress" data-percent="90"></div></div></div>
+    </div>
+  </section>
+  <section id="experience" class="animate-on-scroll">
+    <h2 style="text-align:center;font-size:3.5rem;margin-bottom:80px;background:linear-gradient(135deg,#fff,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Professional Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <h3>ERPNext Consultant & Developer</h3>
+          <p><strong>Abana Al Arabiya Company • Riyadh, KSA</strong><br>Dec 2020 – Present</p>
+          <p>Leading full-cycle ERPNext implementation, custom modules, portal integration, and IT infrastructure management.</p>
+        </div>
       </div>
-      <div style="background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:25px;padding:30px">
-        <h3>Development</h3><p>Python • JavaScript • Frappe • REST API</p>
-        <div class="progress"><div class="bar" data-pct="92"></div></div>
+      <div class="timeline-item right">
+        <div class="timeline-content">
+          <h3>Senior ERPNext Developer & IT Admin</h3>
+          <p><strong>Kemyea Yanbu • Yanbu, KSA</strong><br>Mar 2018 – Nov 2020</p>
+          <p>Managed upgrades, workflow automation, email/website integration, and enterprise support.</p>
+        </div>
       </div>
-      <div style="background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:25px;padding:30px">
-        <h3>DevOps & Cloud</h3><p>Linux • Docker • AWS • Nginx • Bench</p>
-        <div class="progress"><div class="bar" data-pct="88"></div></div>
-      </div>
-      <div style="background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:25px;padding:30px">
-        <h3>Database</h3><p>MariaDB • PostgreSQL • MySQL</p>
-        <div class="progress"><div class="bar" data-pct="90"></div></div>
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <h3>ERP Support & Network Administrator</h3>
+          <p><strong>Ablaze Info Solutions • India</strong><br>Dec 2015 – Feb 2018</p>
+          <p>Handled ERP systems, network security, LAN/WAN, and end-user training.</p>
+        </div>
       </div>
     </div>
   </section>
-
-  <section id="contact">
-    <h2>Get In Touch</h2>
-    <div style="max-width:600px;margin:0 auto;text-align:center">
-      <p style="font-size:1.5rem;margin:30px 0">
-        <a href="https://wa.me/966580608336" target="_blank" style="color:#25D366;text-decoration:none">
-          <strong>WhatsApp: +966 58 060 8336 (Instant Reply)</strong>
-        </a>
-      </p>
-      <p><strong>Email:</strong> nasiransari97177@gmail.com</p>
-      <p><strong>Location:</strong> Riyadh, Saudi Arabia</p>
+  <section id="projects" class="animate-on-scroll">
+    <h2 style="text-align:center;font-size:3.5rem;margin-bottom:70px;background:linear-gradient(135deg,#fff,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Featured Projects</h2>
+    <div class="repos-grid" id="reposContainer"></div>
+  </section>
+  <!-- CONTACT SECTION WITH ICONS & INSTANT WHATSAPP -->
+  <section id="contact" class="animate-on-scroll">
+    <h2 style="text-align:center;font-size:3.5rem;margin-bottom:70px;background:linear-gradient(135deg,#fff,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Get In Touch</h2>
+    <div class="contact-form">
+      <form id="contactForm" action="https://formspree.io/f/mknejyva" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message → Instant Reply</button>
+      </form>
+      <!-- INSTANT WHATSAPP NOTIFICATION -->
+      <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+          if (this.querySelector('button').disabled) return;
+          this.querySelector('button').disabled = true;
+          this.querySelector('button').textContent = 'Sending...';
+          const name = this.name.value.trim();
+          const email = this.email.value.trim();
+          const message = this.message.value.trim();
+          const whatsappText = `NEW PORTFOLIO MESSAGE!\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\nTime: ${new Date().toLocaleString()}`;
+          const whatsappURL = `https://api.whatsapp.com/send?phone=966580608336&text=${encodeURIComponent(whatsappText)}`;
+          setTimeout(() => window.open(whatsappURL, '_blank'), 1000);
+        });
+      </script>
+      <!-- CONTACT INFO WITH BEAUTIFUL ICONS -->
+      <div class="contact-info">
+        <p><i class="fab fa-whatsapp"></i><a href="https://wa.me/966580608336" target="_blank">+966 58 060 8336 (WhatsApp)</a></p>
+        <p><i class="fas fa-phone"></i>+966 58 060 8336 • +91 82714 04838</p>
+        <p><i class="fas fa-envelope"></i>nasiransari97177@gmail.com</p>
+        <p><i class="fas fa-envelope"></i>nasiruddin.ansari@mail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i>Riyadh, Saudi Arabia</p>
+      </div>
     </div>
   </section>
-
-  <footer style="text-align:center;padding:60px 20px;background:rgba(0,0,0,0.5);margin-top:80px">
-    © 2025–2026 Nasiruddin Ansari — Built for Speed & Performance
-  </footer>
-
-  <!-- Tiny Optimized Script -->
+  <footer>© 2025 Nasiruddin Ansari — Built with Passion & Precision</footer>
   <script>
-    // Navbar shrink + progress bars
-    window.onscroll = () => {
-      document.getElementById('navbar').classList.toggle('scrolled', scrollY > 80);
-      document.querySelectorAll('.bar').forEach(b => {
-        if (b.getBoundingClientRect().top < innerHeight - 100) {
-          b.style.width = b.dataset.pct + '%';
+    // Particles
+    for(let i=0;i<60;i++){
+      let p=document.createElement('div'); p.className='particle';
+      p.style.width=p.style.height=Math.random()*10+3+'px';
+      p.style.left=Math.random()*100+'%';
+      p.style.animationDelay=Math.random()*20+'s';
+      p.style.animationDuration=15+Math.random()*25+'s';
+      document.getElementById('particles').appendChild(p);
+    }
+    // Animations & Progress
+    const observer = new IntersectionObserver(e=>e.forEach(en=>en.isIntersecting&&en.target.classList.add('animated')),{threshold:0.15});
+    document.querySelectorAll('.animate-on-scroll').forEach(el=>observer.observe(el));
+    window.addEventListener('scroll',()=>{
+      document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>100);
+      document.querySelectorAll('.progress').forEach(bar=>{
+        if(bar.getBoundingClientRect().top < window.innerHeight - 100){
+          bar.style.width = bar.dataset.percent + '%';
         }
       });
-    };
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.onclick = e => {
+    });
+    // GitHub Projects
+    fetch('https://api.github.com/users/nasir97177/repos?sort=updated&per_page=6')
+      .then(r=>r.json())
+      .then(repos=>{
+        const c=document.getElementById('reposContainer');
+        repos.forEach(repo=>{
+          const card=document.createElement('div'); card.className='repo-card';
+          card.innerHTML=`<h3>${repo.name}</h3><p>${repo.description||'No description'}</p><a href="${repo.html_url}" target="_blank">View on GitHub</a>`;
+          c.appendChild(card);
+        });
+      });
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
         e.preventDefault();
-        document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-      };
+        document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+      });
     });
   </script>
 </body>
 </html>
+ Photo from This Link https://drive.google.com/file/d/14rwV-YwjH5bvZ-iAAPpSzVtNNFMcozWX/view?usp=drive_link
