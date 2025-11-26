@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -237,4 +237,430 @@
   </script>
 </body>
 </html>
- Photo from This Link https://drive.google.com/file/d/14rwV-YwjH5bvZ-iAAPpSzVtNNFMcozWX/view?usp=drive_link
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nasiruddin Ansari | ERPNext & Frappe Expert Riyadh</title>
+  <meta name="description" content="Senior ERPNext Developer | Custom Modules | ZATCA e-Invoicing | Frappe Framework | Riyadh, Saudi Arabia">
+
+  <!-- Font Awesome Fixed -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #6366f1;
+      --accent: #ec4899;
+      --glass: rgba(255, 255, 255, 0.1);
+      --border: rgba(255, 255, 255, 0.15);
+      --text-gradient: linear-gradient(135deg, #c4b5fd, #e0e7ff, #ffffff);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a1a;
+      color: #fff;
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    /* Animated Background */
+    .bg {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 30%, #0f3460 70%, #1e1b4b 100%);
+      z-index: -2;
+    }
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 30% 70%, rgba(99, 102, 241, 0.25), transparent 60%);
+      z-index: -1;
+      animation: float 25s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      50% { transform: translate(5%, -5%) rotate(2deg); }
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--glass);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 60px;
+      padding: 16px 50px;
+      z-index: 1000;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      transition: all 0.4s ease;
+    }
+    nav.scrolled {
+      top: 10px;
+      padding: 12px 40px;
+      background: rgba(10, 10, 26, 0.8);
+    }
+    .logo {
+      font-size: 2.1rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #ffffff, #c4b5fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 30px;
+      transition: all 0.3s;
+    }
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-3px);
+    }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero h1 {
+      font-size: 5.8rem;
+      font-weight: 900;
+      background: var(--text-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+      animation: fadeInUp 1s ease;
+    }
+    .hero p {
+      font-size: 1.9rem;
+      opacity: 0.95;
+      margin: 30px 0 50px;
+      animation: fadeInUp 1.2s ease;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 20px 50px;
+      margin: 12px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      text-decoration: none;
+      transition: all 0.4s;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    }
+    .btn-primary {
+      background: #fff;
+      color: #4f46e5;
+    }
+    .btn-outline {
+      border: 3px solid #fff;
+      color: #fff;
+      background: transparent;
+    }
+    .btn:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+    }
+
+    section { padding: 140px 5%; }
+    h2 {
+      text-align: center;
+      font-size: 3.5rem;
+      margin-bottom: 70px;
+      background: var(--text-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* About Section */
+    .about {
+      display: flex;
+      align-items: center;
+      gap: 100px;
+      max-width: 1400px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .about-img img {
+      width: 400px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 20px solid rgba(255,255,255,0.15);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+      animation: floatImg 6s ease-in-out infinite;
+    }
+    @keyframes floatImg {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-25px); }
+    }
+    .about-text {
+      max-width: 700px;
+    }
+    .about-text ul {
+      margin: 25px 0;
+      padding-left: 10px;
+    }
+    .about-text li {
+      margin: 14px 0;
+      font-size: 1.15rem;
+      padding-left: 10px;
+      position: relative;
+    }
+    .about-text li:before {
+      content: "✓";
+      color: #10b981;
+      font-weight: 900;
+      font-size: 1.4rem;
+      position: absolute;
+      left: -30px;
+      top: -2px;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 35px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    .skill-card {
+      background: var(--glass);
+      backdrop-filter: blur(15px);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 35px;
+      transition: all 0.4s;
+    }
+    .skill-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 30px 70px rgba(99,102,241,0.4);
+    }
+    .progress {
+      height: 14px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 18px;
+    }
+    .bar {
+      height: 100%;
+      background: linear-gradient(90deg, #6366f1, #ec4899);
+      width: 0;
+      transition: width 2.5s ease;
+      border-radius: 10px;
+    }
+
+    /* Contact Cards */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 50px auto 0;
+    }
+    .contact-card {
+      background: var(--glass);
+      backdrop-filter: blur(15px);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 40px 30px;
+      text-align: center;
+      transition: all 0.4s;
+    }
+    .contact-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 25px 50px rgba(99,102,241,0.4);
+    }
+    .contact-card i {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      background: var(--text-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .contact-card a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.3rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 80px 20px;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(10px);
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 3.8rem; }
+      .hero p { font-size: 1.5rem; }
+      nav { padding: 14px 20px; gap: 20px; flex-wrap: wrap; justify-content: center; }
+      .logo { font-size: 1.8rem; }
+      .about { flex-direction: column; text-align: center; gap: 60px; }
+      .about-img img { width: 320px; height: 320px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="overlay"></div>
+
+  <nav id="navbar">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+    </ul>
+    <div class="logo">Nasiruddin Ansari</div>
+    <ul>
+      <li><a href="https://github.com/nasir97177" target="_blank">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/nasiruddin-ansari-867b5b107/" target="_blank">LinkedIn</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <h1>Nasiruddin Ansari</h1>
+      <p>Senior ERPNext & Frappe Framework Developer • ZATCA e-Invoicing Expert • Riyadh</p>
+      <a href="#contact" class="btn btn-primary">Hire Me Now</a>
+      <a href="https://wa.me/966580608336" target="_blank" class="btn btn-outline">WhatsApp Direct</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about">
+      <div class="about-img">
+        <img src="https://drive.google.com/uc?export=view&id=14rwV-YwjH5bvZ-iAAPpSzVtNNFMcozWX" alt="Nasiruddin Ansari">
+      </div>
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>Master of Computer Applications (MCA) with <strong>12+ years</strong> of deep expertise in <strong>ERPNext & Frappe Framework</strong> development and enterprise solutions.</p>
+        
+        <ul>
+          <li>Building production-grade <strong>custom ERPNext apps & modules</strong> from scratch</li>
+          <li>Expert in <strong>Frappe Framework, Custom DocTypes, Server/Client Scripts, Jinja</strong></li>
+          <li>Successfully delivered <strong>ZATCA Phase 2 e-Invoicing</strong> for Saudi companies</li>
+          <li>Full-stack: <strong>Python, JavaScript, Vue.js, MariaDB, REST APIs</strong></li>
+          <li>Custom Portals: Customer, Vendor, Employee, Partner portals</li>
+          <li>Third-party integrations: SAP, Payment Gateways, SMS, WhatsApp, Logistics</li>
+          <li>Advanced Workflow, Print Format, Report Builder, Email Templates</li>
+          <li>DevOps: Docker, Nginx, AWS, Bench CLI, Multi-tenant setups</li>
+          <li>Performance tuning & scaling for 1000+ concurrent users</li>
+          <li>Full implementation lifecycle: Analysis → Development → Migration → Support</li>
+        </ul>
+
+        <p>Based in <strong>Riyadh, Saudi Arabia</strong> — passionate about open-source ERP transformation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Technical Expertise</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>ERPNext & Frappe Framework</h3>
+        <p>Custom Apps • ZATCA • Portals • Workflows</p>
+        <div class="progress"><div class="bar" data-pct="97"></div></div>
+      </div>
+      <div class="skill-card">
+        <h3>Full-Stack Development</h3>
+        <p>Python • JavaScript • Vue.js • REST API</p>
+        <div class="progress"><div class="bar" data-pct="93"></div></div>
+      </div>
+      <div class="skill-card">
+        <h3>DevOps & Cloud</h3>
+        <p>Linux • Docker • AWS • Nginx • Bench</p>
+        <div class="progress"><div class="bar" data-pct="90"></div></div>
+      </div>
+      <div class="skill-card">
+        <h3>Database & Integration</h3>
+        <p>MariaDB • PostgreSQL • Webhooks • APIs</p>
+        <div class="progress"><div class="bar" data-pct="92"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Get In Touch — Instant Response</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="fab fa-whatsapp"></i>
+        <p><strong>WhatsApp (Fastest)</strong></p>
+        <a href="https://wa.me/966580608336" target="_blank">+966 58 060 8336</a>
+      </div>
+      <div class="contact-card">
+        <i class="fab fa-linkedin"></i>
+        <p><strong>LinkedIn</strong></p>
+        <a href="https://www.linkedin.com/in/nasiruddin-ansari-867b5b107/" target="_blank">View Profile</a>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <p><strong>Email</strong></p>
+        <a href="mailto:nasiransari97177@gmail.com">nasiransari97177@gmail.com</a>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-map-marker-alt"></i>
+        <p><strong>Location</strong></p>
+        <p>Riyadh, Saudi Arabia</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025–2026 Nasiruddin Ansari — Senior ERPNext & Frappe Developer | Riyadh, Saudi Arabia
+  </footer>
+
+  <script>
+    // Scroll effects
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', scrollY > 80);
+      document.querySelectorAll('.bar').forEach(bar => {
+        if (bar.getBoundingClientRect().top < window.innerHeight - 100) {
+          bar.style.width = bar.dataset.pct + '%';
+        }
+      });
+    });
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
